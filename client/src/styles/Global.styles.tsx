@@ -25,10 +25,15 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.main`
   display: flex;
+  width: 1600px;
   min-height: 100vh;
   margin: 0rem auto;
+  padding: 0rem 1rem;
   flex-direction: column;
-  padding: 1rem 1rem 0rem 1rem;
+
+  @media (max-width: 1600px) {
+    width: 100%;
+  }
 `
 
 export const Column = styled.div`

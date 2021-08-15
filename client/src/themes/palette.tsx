@@ -41,7 +41,7 @@ export const theme: DefaultTheme = {
     accentp2: '#FC9237',
   },
 
-  border: ['10px'],
+  border: ['10px', '5px'],
   spacing: ['1rem', '0.825rem', '0.625rem'],
 
   fontSize: {
