@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ItemsList from './ItemsList'
 
 interface Iarray {
   name: string
@@ -14,7 +15,7 @@ const Desktop: React.FC = () => {
 
   return (
     <Container>
-      <Item>Produits</Item>
+      <ItemsList />
       {array.map((el, key: number): React.ReactNode => {
         return <Item key={key}>{el.name}</Item>
       })}

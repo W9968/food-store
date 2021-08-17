@@ -20,7 +20,7 @@ function App() {
             <Header />
           </Column>
           {/* this one is for content and pages */}
-          <Column></Column>
+          <Column>{/* <LoginPage /> */}</Column>
         </Container>
       </ThemeProvider>
     </>
