@@ -13,17 +13,18 @@ const GoggleButton: React.FC<Record<string, any>> = ({ ...rest }) => {
 export default GoggleButton
 
 const Field = styled.button`
-  width: 48px;
-  height: 48px;
-  display: flex;
+  width: 40pt;
   border: none;
+  height: 40pt;
+  display: flex;
   outline: none;
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  color: ${(props) => props.theme.foreground};
   margin-top: ${(props) => props.theme.spacing[0]};
-  color: ${(props) => props.theme.accent.accentp2};
   border-radius: ${(props) => props.theme.border[0]};
   background: ${(props) => props.theme.accent.accentp1};
   font-size: ${(props) => props.theme.fontSize.heading2};
+  filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 25%));
 `

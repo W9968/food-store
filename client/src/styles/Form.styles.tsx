@@ -30,6 +30,7 @@ export const Cols = styled(mo.div)`
 `
 
 export const Lines = styled.div`
+  width: 450px;
   display: flex;
   align-items: center;
   flex-direction: column;

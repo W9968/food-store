@@ -10,6 +10,7 @@ import {
   ContactPage,
   LandPage,
   LoginPage,
+  ProductsPage,
   RegisterPgae,
 } from 'views/export'
 
@@ -29,6 +30,7 @@ function App() {
             {/* this one is for content and pages */}
             <Column>
               <Switch>
+                <Route path='/products' component={ProductsPage} />
                 <Route path='/register' component={RegisterPgae} />
                 <Route path='/login' component={LoginPage} />
                 <Route path='/contact' component={ContactPage} />

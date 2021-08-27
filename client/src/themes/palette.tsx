@@ -12,7 +12,6 @@ declare module 'styled-components' {
       error: string
       success: string
       accentp1: string
-      accentp2: string
     }
 
     border: string[]
@@ -29,19 +28,18 @@ declare module 'styled-components' {
 }
 
 export const theme: DefaultTheme = {
-  foreground: '#0E153A',
+  foreground: '#111111',
   background: '#ffffff',
 
   accent: {
     primary: '#F6F8FC',
-    secondary: '#F6F5FF',
+    secondary: '#F3F5FF',
     error: '#ee0000',
     success: '#50e3c2',
     accentp1: '#E7E6EF',
-    accentp2: '#0E153A',
   },
 
-  border: ['10px', '5px'],
+  border: ['20px', '10px', '5px'],
   spacing: ['1rem', '0.825rem', '0.625rem'],
 
   fontSize: {
