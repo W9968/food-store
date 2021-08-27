@@ -1,13 +1,17 @@
 import React from 'react'
-import { Wrapper } from 'styles/Home.styles'
-import { LandingHero, LogoLandingPage } from 'components/export'
+import { LandingHero } from 'components/export'
+import { Wrapper, Blob, BlobOne, BlobTwo, Overlay } from 'styles/Home.styles'
 
 const _Home: React.FC = () => {
   return (
     <>
       <Wrapper>
-        <LandingHero />
-        <LogoLandingPage />
+        <Overlay>
+          <LandingHero />
+          <Blob />
+          <BlobOne />
+          <BlobTwo />
+        </Overlay>
       </Wrapper>
     </>
   )
