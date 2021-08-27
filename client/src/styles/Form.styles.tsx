@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion as mo } from 'framer-motion'
 
 export const Wrapper = styled.div`
   top: 0;
@@ -6,13 +7,15 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
   position: absolute;
   background: ${(props) => props.theme.background};
 `
 
-export const Cols = styled.div`
+export const Cols = styled(mo.div)`
   flex: 1;
   display: flex;
+
   align-items: center;
   flex-direction: column;
 

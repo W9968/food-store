@@ -34,11 +34,11 @@ export const theme: DefaultTheme = {
 
   accent: {
     primary: '#F6F8FC',
-    secondary: '#FFEDE1',
+    secondary: '#F6F5FF',
     error: '#ee0000',
     success: '#50e3c2',
-    accentp1: '#FFDCC6',
-    accentp2: '#FC9237',
+    accentp1: '#E7E6EF',
+    accentp2: '#0E153A',
   },
 
   border: ['10px', '5px'],

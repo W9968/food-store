@@ -16,7 +16,10 @@ const _Login: React.FC = () => {
     <>
       <Wrapper>
         {/*  this will contain forms */}
-        <Cols>
+        <Cols
+          initial={{ opacity: 0, x: '-10%' }}
+          animate={{ opacity: 1, x: '0%' }}
+          transition={{ type: 'tween' }}>
           {/* this one will have form */}
           <Lines>
             <HeroAuthText content='Acceder à Votre Compte' />
@@ -47,7 +50,10 @@ const _Login: React.FC = () => {
           </Lines>
         </Cols>
         {/* form side, auth login option */}
-        <Cols>
+        <Cols
+          initial={{ opacity: 0, x: '10%' }}
+          animate={{ opacity: 1, x: '0%' }}
+          transition={{ type: 'tween' }}>
           <RightSide>
             <Logo width={100} />
             <HeroLeftSide content='Content De Te Revoir' />

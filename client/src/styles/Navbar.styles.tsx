@@ -9,12 +9,6 @@ export const NavContainer = styled.nav`
   padding: ${(props) => props.theme.spacing[0]} 0;
 `
 
-export const Container = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
-`
-
 export const Div = styled.div`
   display: flex;
   cursor: pointer;
@@ -36,8 +30,20 @@ export const ButtonChev = styled(mo.button)`
   justify-content: center;
 `
 
-export const DropDown = styled(mo.div)`
-  top: 0%;
+export const Container = styled(mo.div)`
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 125px;
+  margin-top: 60px;
   position: absolute;
-  margin-top: 36px;
+  background: ${(props) => props.theme.background};
+`
+
+export const DropDown = styled.div`
+  width: 1600px;
+  margin: 0 auto;
+  padding: ${(props) => props.theme.spacing[0]};
+  background: ${(props) => props.theme.background};
 `
