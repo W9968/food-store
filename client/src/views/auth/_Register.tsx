@@ -10,22 +10,47 @@ import {
   HeroLeftSide,
   NavLogo,
 } from 'components/export'
-import GoggleButton from 'components/button/GoggleButton'
 
-const _Login: React.FC = () => {
+const _Register: React.FC = () => {
   const history = useHistory()
   return (
     <>
       <Wrapper>
         {/*  this will contain forms */}
         <Cols
-          className='first-child'
+          className='last-child'
           initial={{ opacity: 0, x: '-10%' }}
           animate={{ opacity: 1, x: '0%' }}
           transition={{ type: 'tween' }}>
           {/* this one will have form */}
+          <RightSide>
+            <NavLogo type='lg' onClick={() => history.push('/')} />
+            <HeroLeftSide content='Inscrivez à Notre Plateforme' />
+            <Resetdiv>
+              Si vous avez un compte cliquez{' '}
+              <span
+                onClick={(): void => history.push('/login')}
+                style={{
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  fontStyle: 'italic',
+                }}>
+                ici
+              </span>{' '}
+              <br />
+              pour se connecter.
+            </Resetdiv>
+          </RightSide>
+        </Cols>
+        {/* form side, auth login option */}
+        <Cols
+          className='first-child'
+          initial={{ opacity: 0, x: '10%' }}
+          animate={{ opacity: 1, x: '0%' }}
+          transition={{ type: 'tween' }}>
           <Lines>
             <HeroAuthText content='Acceder à Votre Compte' />
+            <Input type='text' palceHolder='Entrez votre nom' />
             <Input
               type='email'
               onChange={(e: React.FormEvent<HTMLInputElement>) =>
@@ -52,40 +77,9 @@ const _Login: React.FC = () => {
             </Resetdiv>
           </Lines>
         </Cols>
-        {/* form side, auth login option */}
-        <Cols
-          className='last-child'
-          initial={{ opacity: 0, x: '10%' }}
-          animate={{ opacity: 1, x: '0%' }}
-          transition={{ type: 'tween' }}>
-          <RightSide>
-            <NavLogo type='lg' onClick={() => history.push('/')} />
-            <HeroLeftSide content='Content De Te Revoir' />
-            <Resetdiv>
-              Si vous n'avez pas de compte cliquez{' '}
-              <span
-                onClick={(): void => history.push('/register')}
-                style={{
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  fontStyle: 'italic',
-                }}>
-                ici
-              </span>{' '}
-              pour en créer un.
-            </Resetdiv>
-            <p
-              style={{
-                fontWeight: 700,
-              }}>
-              Or inscrivez-vous avec
-            </p>
-            <GoggleButton />
-          </RightSide>
-        </Cols>
       </Wrapper>
     </>
   )
 }
 
-export default _Login
+export default _Register

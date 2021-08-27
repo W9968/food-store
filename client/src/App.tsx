@@ -5,7 +5,13 @@ import { BrowserRouter as AppRouter, Route, Switch } from 'react-router-dom'
 
 // import views and components
 import { Header } from 'components/export'
-import { AboutPage, ContactPage, LandPage, LoginPage } from 'views/export'
+import {
+  AboutPage,
+  ContactPage,
+  LandPage,
+  LoginPage,
+  RegisterPgae,
+} from 'views/export'
 
 function App() {
   return (
@@ -23,6 +29,7 @@ function App() {
             {/* this one is for content and pages */}
             <Column>
               <Switch>
+                <Route path='/register' component={RegisterPgae} />
                 <Route path='/login' component={LoginPage} />
                 <Route path='/contact' component={ContactPage} />
                 <Route path='/about' component={AboutPage} />

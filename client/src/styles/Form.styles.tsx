@@ -10,24 +10,23 @@ export const Wrapper = styled.div`
   overflow: hidden;
   position: absolute;
   background: ${(props) => props.theme.background};
+
+  .first-child {
+    justify-content: space-between;
+    background: ${(props) => props.theme.background};
+  }
+
+  .last-child {
+    justify-content: center;
+    background: ${(props) => props.theme.accent.secondary};
+  }
 `
 
 export const Cols = styled(mo.div)`
   flex: 1;
   display: flex;
-
   align-items: center;
   flex-direction: column;
-
-  &:first-child {
-    justify-content: space-between;
-    background: ${(props) => props.theme.background};
-  }
-
-  &:last-child {
-    justify-content: center;
-    background: ${(props) => props.theme.accent.secondary};
-  }
 `
 
 export const Lines = styled.div`
