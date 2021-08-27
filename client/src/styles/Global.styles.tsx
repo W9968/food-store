@@ -5,22 +5,39 @@ export const GlobalStyle = createGlobalStyle`
 	*::after,
 	*::before {
 		margin: 0;
-        padding: 0;
-		box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
         
 	}
 	html, body {
-        max-width: 100%;
+    max-width: 100%;
 		min-height: 100vh;
 		font-weight: 400;
 		font-style: normal;
 		backface-visibility: hidden;
 		text-rendering: optimizeSpeed;
-        font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 		-webkit-font-smoothing: antialiased;
 		color: ${(props) => props.theme.foreground};
 		background: ${(props) => props.theme.background};
 	}
+
+  ::selection {
+    color: ${(props) => props.theme.background};
+    background: ${(props) => props.theme.foreground};
+
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    display: none;
+    background: none; 
+  }
+ 
 `
 
 export const Container = styled.main`

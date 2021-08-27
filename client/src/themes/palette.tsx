@@ -12,6 +12,7 @@ declare module 'styled-components' {
       error: string
       success: string
       accentp1: string
+      acceptp2: string
     }
 
     border: string[]
@@ -37,6 +38,7 @@ export const theme: DefaultTheme = {
     error: '#ee0000',
     success: '#50e3c2',
     accentp1: '#E7E6EF',
+    acceptp2: '#EC42A2',
   },
 
   border: ['20px', '10px', '5px'],
