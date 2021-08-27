@@ -26,5 +26,5 @@ const Heading = styled.h1`
   font-family: 'Playfair Display', serif;
   color: ${(props) => props.theme.foreground};
   text-shadow: 2px 3px 15px rgba(0, 0, 0, 0.15);
-  margin-bottom: calc(${(props) => props.theme.spacing[0]} * 5);
+  margin-bottom: calc(${(props) => props.theme.spacing[0]} * 10);
 `
