@@ -36,10 +36,10 @@ const movement_two = keyframes`
 
 export const Blob = styled.div`
   top: 40%;
-  left: 20%;
-  width: 200px;
+  left: 5%;
+  width: 450px;
   opacity: 0.7;
-  height: 200px;
+  height: 400px;
   position: absolute;
   background: #ed1250;
   border-radius: 30% 50% 20% 40%;
