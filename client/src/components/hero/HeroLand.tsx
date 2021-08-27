@@ -9,7 +9,7 @@ export default HeroLand
 
 const Heading = styled.h1`
   z-index: 4;
-  font-size: 5em;
+  font-size: 7rem;
   font-weight: 900;
   line-height: 0.9em;
   position: relative;

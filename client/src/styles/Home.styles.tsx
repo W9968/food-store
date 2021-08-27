@@ -41,22 +41,22 @@ export const Blob = styled.div`
   opacity: 0.7;
   height: 400px;
   position: absolute;
-  background: #ed1250;
   border-radius: 30% 50% 20% 40%;
+  background: ${(props) => props.theme.accent.secondary};
   animation: ${transform} 20s ease-in-out infinite both alternate,
     ${movement_one} 40s ease-in-out infinite both;
 `
 export const BlobOne = styled.div`
-  top: 50%;
+  top: 30%;
   left: 50%;
   width: 500px;
   height: 500px;
   opacity: 0.7;
   position: absolute;
-  background: #ed1250;
   transform: rotate(-180deg);
   border-radius: 30% 50% 20% 40%;
   transform: translate(-50%, -50%);
+  background: ${(props) => props.theme.accent.primary};
   animation: ${transform} 20s ease-in-out infinite both alternate,
     ${movement_one} 40s ease-in-out infinite both;
 `
@@ -67,9 +67,9 @@ export const BlobTwo = styled.div`
   width: 350px;
   height: 350px;
   position: absolute;
-  background: #ed1250;
   transform: rotate(-180deg);
   border-radius: 30% 50% 20% 40%;
+  background: ${(props) => props.theme.accent.accentp1};
   animation: ${transform} 20s ease-in-out infinite both alternate,
     ${movement_two} 40s ease-in-out infinite both;
 `
