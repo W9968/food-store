@@ -2,15 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 
 const HeroLand: React.FC = () => {
-  return <Heading>Koul & Wakel</Heading>
+  return (
+    <>
+      <Heading>
+        <div>Koul</div>
+        <div>& </div>
+        <div>Wakel</div>
+      </Heading>
+    </>
+  )
 }
 
 export default HeroLand
 
 const Heading = styled.h1`
   z-index: 4;
-  font-size: 7rem;
+  font-size: 7em;
   font-weight: 900;
+  text-align: center;
   line-height: 0.9em;
   position: relative;
   letter-spacing: 2px;
