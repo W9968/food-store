@@ -9,7 +9,9 @@ const _Contact: React.FC = () => {
         <Cols>
           <Form>
             <Text>
-              <h1 style={{ marginBottom: '10px' }}>Get in Touch</h1>
+              <h1 style={{ marginBottom: '10px', fontSize: '2.5rem' }}>
+                Get in Touch
+              </h1>
               <p style={{ fontWeight: 500 }}>
                 Si vous avez quelque chose à nous dire ou si vous souhaitez être
                 partenaire, envoyez-nous un e-mail et nous vous contacterons
