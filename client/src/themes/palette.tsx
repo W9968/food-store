@@ -5,10 +5,13 @@ declare module 'styled-components' {
   interface DefaultTheme {
     foreground: string
     background: string
+    mdleground: string
 
     accent: {
       primary: string
       secondary: string
+      shade1: string
+      shade2: string
       error: string
       success: string
       accentp1: string
@@ -31,13 +34,16 @@ declare module 'styled-components' {
 export const theme: DefaultTheme = {
   foreground: '#111111',
   background: '#ffffff',
+  mdleground: '#6200ee',
 
   accent: {
     primary: '#F6F8FC',
-    secondary: '#F3F5FF',
+    secondary: '#a166f5',
+    shade1: '#8133f1',
+    shade2: '#4500a7',
     error: '#ee0000',
     success: '#50e3c2',
-    accentp1: '#E7E6EF',
+    accentp1: '#721af0',
     acceptp2: '#EC42A2',
   },
 

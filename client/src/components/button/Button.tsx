@@ -31,8 +31,16 @@ const Field = styled.button`
   text-transform: capitalize;
   color: ${(props) => props.theme.accent.primary};
   padding: 0 ${(props) => props.theme.spacing[2]};
-  background: ${(props) => props.theme.foreground};
+  background: ${(props) => props.theme.mdleground};
   border-radius: ${(props) => props.theme.border[0]};
   font-size: ${(props) => props.theme.fontSize.parag};
   filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 25%));
+
+  &:hover {
+    background: ${(props) => props.theme.accent.shade1};
+  }
+
+  &:focus {
+    background: ${(props) => props.theme.accent.shade2};
+  }
 `

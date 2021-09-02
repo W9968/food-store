@@ -9,6 +9,7 @@ import {
   OldPrice,
   Icons,
 } from 'styles/Card.styles'
+
 import { RiShoppingCartLine } from 'react-icons/ri'
 
 const ProductCard: React.FC = () => {

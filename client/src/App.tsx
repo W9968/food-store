@@ -6,12 +6,13 @@ import { BrowserRouter as AppRouter, Route, Switch } from 'react-router-dom'
 // import views and components
 import { Header } from 'components/export'
 import {
-  AboutPage,
-  ContactPage,
   LandPage,
   LoginPage,
+  AboutPage,
+  ContactPage,
   ProductsPage,
   RegisterPgae,
+  DashboardPage,
 } from 'views/export'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             {/* this one is for content and pages */}
             <Column>
               <Switch>
+                <Route path='/exec$' component={DashboardPage} />
                 <Route path='/products' component={ProductsPage} />
                 <Route path='/register' component={RegisterPgae} />
                 <Route path='/login' component={LoginPage} />

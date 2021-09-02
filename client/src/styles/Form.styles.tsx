@@ -18,7 +18,8 @@ export const Wrapper = styled.div`
 
   .last-child {
     justify-content: center;
-    background: ${(props) => props.theme.accent.secondary};
+    color: ${(props) => props.theme.background};
+    background: ${(props) => props.theme.accent.accentp1};
   }
 `
 

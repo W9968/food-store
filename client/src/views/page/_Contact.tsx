@@ -19,10 +19,7 @@ const _Contact: React.FC = () => {
               </p>
             </Text>
 
-            <div
-              style={{
-                display: 'flex',
-              }}>
+            <div className='form-styles'>
               <Input type='text' palceHolder='Votre nom...' />
               <div style={{ width: '25px' }} />
               <Input type='email' palceHolder='Votre email...' />

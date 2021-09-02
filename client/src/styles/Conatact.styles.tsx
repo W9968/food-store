@@ -16,10 +16,30 @@ export const Text = styled.div`
 
 export const Cols = styled.div`
   flex: 1;
+
+  @media (max-width: 768px) {
+    &:first-child {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
 `
 
 export const Form = styled.div`
   width: 80%;
+
+  .form-styles {
+    display: flex;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
 `
 
 export const TextArea = styled.textarea`

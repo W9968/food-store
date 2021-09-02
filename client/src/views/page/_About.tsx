@@ -1,6 +1,6 @@
 import React from 'react'
 
-const _About = () => {
+const _About: React.FC = () => {
   return (
     <>
       <p>about</p>

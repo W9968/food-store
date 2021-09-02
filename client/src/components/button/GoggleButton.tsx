@@ -24,7 +24,7 @@ const Field = styled.button`
   color: ${(props) => props.theme.foreground};
   margin-top: ${(props) => props.theme.spacing[0]};
   border-radius: ${(props) => props.theme.border[0]};
-  background: ${(props) => props.theme.accent.accentp1};
+  background: ${(props) => props.theme.background};
   font-size: ${(props) => props.theme.fontSize.heading2};
   filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 25%));
 `

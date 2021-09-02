@@ -10,6 +10,8 @@ import {
   HeroLeftSide,
   NavLogo,
 } from 'components/export'
+
+import { useMediaQuery } from 'hooks/useMediaQuery'
 import GoggleButton from 'components/button/GoggleButton'
 
 const _Login: React.FC = () => {
@@ -53,37 +55,39 @@ const _Login: React.FC = () => {
           </Lines>
         </Cols>
         {/* form side, auth login option */}
-        <Cols
-          className='last-child'
-          initial={{ opacity: 0, x: '10%' }}
-          animate={{ opacity: 1, x: '0%' }}
-          transition={{ type: 'tween' }}>
-          <RightSide>
-            <NavLogo type='lg' onClick={() => history.push('/')} />
-            <HeroLeftSide content='Content De Te Revoir' />
-            <Resetdiv>
-              Si vous n'avez pas de compte cliquez{' '}
-              <span
-                onClick={(): void => history.push('/register')}
+        {!useMediaQuery(768) && (
+          <Cols
+            className='last-child'
+            initial={{ opacity: 0, x: '10%' }}
+            animate={{ opacity: 1, x: '0%' }}
+            transition={{ type: 'tween' }}>
+            <RightSide>
+              <NavLogo type='lg' onClick={() => history.push('/')} />
+              <HeroLeftSide content='Content De Te Revoir' />
+              <Resetdiv>
+                Si vous n'avez pas de compte cliquez{' '}
+                <span
+                  onClick={(): void => history.push('/register')}
+                  style={{
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    fontStyle: 'italic',
+                  }}>
+                  ici
+                </span>{' '}
+                <br />
+                pour en créer un.
+              </Resetdiv>
+              <p
                 style={{
                   fontWeight: 700,
-                  cursor: 'pointer',
-                  fontStyle: 'italic',
                 }}>
-                ici
-              </span>{' '}
-              <br />
-              pour en créer un.
-            </Resetdiv>
-            <p
-              style={{
-                fontWeight: 700,
-              }}>
-              Or inscrivez-vous avec
-            </p>
-            <GoggleButton />
-          </RightSide>
-        </Cols>
+                Or inscrivez-vous avec
+              </p>
+              <GoggleButton />
+            </RightSide>
+          </Cols>
+        )}
       </Wrapper>
     </>
   )
