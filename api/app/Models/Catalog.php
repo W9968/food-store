@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Catalog extends Model
 {
@@ -17,4 +18,14 @@ class Catalog extends Model
     protected $fillable = [
         'category'
     ];
+
+    /**
+     * Get all of the brands for the Catalog
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Brands(): HasMany
+    {
+        return $this->hasMany(Brand::class, 'catalog_id', 'id');
+    }
 }

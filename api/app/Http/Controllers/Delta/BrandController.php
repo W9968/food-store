@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Delta;
 
-use App\Models\Catalog;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CatalogPostRequest;
+use App\Models\Brand;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\BrandPostRequest;
 
-class CatalogController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        return Catalog::with('brands')->get();
+        return Brand::all();
     }
 
     /**
@@ -25,9 +25,9 @@ class CatalogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CatalogPostRequest $request)
+    public function store(BrandPostRequest $request)
     {
-        return Catalog::create($request->all());
+        return Brand::create($request -> all());
     }
 
     /**
@@ -38,7 +38,7 @@ class CatalogController extends Controller
      */
     public function show($id)
     {
-        return Catalog::find($id);
+        return Brand::find($id);
     }
 
     /**
@@ -50,7 +50,7 @@ class CatalogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return Catalog::find($id)->update($request -> all()) ;
+        return Brand::find($id)->update($request -> all());
     }
 
     /**
@@ -61,6 +61,6 @@ class CatalogController extends Controller
      */
     public function destroy($id)
     {
-        return Catalog::destroy($id);
+        return Brand::destroy($id);
     }
 }
