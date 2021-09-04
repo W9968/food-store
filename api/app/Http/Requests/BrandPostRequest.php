@@ -24,8 +24,8 @@ class BrandPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'brandName' => 'required|string',
-            'catalog_id' => 'required|numeric'
+            'brandName' => 'required',
+            'catalog_id' => 'required'
         ];
     }
 }

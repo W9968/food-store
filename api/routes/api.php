@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Delta\BrandController;
-use App\Http\Controllers\Delta\CatalogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Delta\BrandController;
+use App\Http\Controllers\Delta\CatalogController;
+use App\Http\Controllers\Delta\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,7 @@ Route::post('/brand', [BrandController::class, 'store']);
 Route::get('/brand/{id}', [BrandController::class, 'show']);
 Route::patch('/brand/{id}', [BrandController::class, 'update']);
 Route::delete('/brand/{id}', [BrandController::class, 'destroy']);
+
+// product
+Route::get('/product', [ProductController::class, 'index']);
+Route::post('/product', [ProductController::class, 'store']);

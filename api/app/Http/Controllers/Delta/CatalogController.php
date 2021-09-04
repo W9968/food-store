@@ -16,7 +16,7 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        return Catalog::with('brands')->get();
+        return Catalog::with('brands.products')->get();
     }
 
     /**

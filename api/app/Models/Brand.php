@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Brand extends Model
 {
@@ -16,7 +17,8 @@ class Brand extends Model
      * @var array
      */
     protected $fillable = [
-        'catalog_id', 'brandName'
+        'catalog_id', 
+        'brandName'
     ];
 
     /**
@@ -27,5 +29,15 @@ class Brand extends Model
     public function catalog(): BelongsTo
     {
         return $this->belongsTo(Catalog::class, 'catalog_id');
+    }
+
+    /**
+     * Get all of the products for the Brand
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class, 'brand_id', 'id');
     }
 }
