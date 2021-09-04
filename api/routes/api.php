@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Delta\CatalogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// catalog
+Route::get('/catalog', [CatalogController::class, 'index']);
+Route::post('/catalog', [CatalogController::class, 'store']);
+Route::get('/catalog/{id}', [CatalogController::class, 'show']);
+Route::patch('/catalog/{id}', [CatalogController::class,'update']);
+Route::delete('/catalog/{id}', [CatalogController::class, 'destroy']);
