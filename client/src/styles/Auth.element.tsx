@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { motion as mo } from 'framer-motion'
 
-export const AuthWrapper = styled(mo.div)`
+export const AuthWrapper = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -11,7 +11,7 @@ export const AuthWrapper = styled(mo.div)`
   flex-direction: column;
 `
 
-export const Container = styled.div`
+export const Container = styled(mo.div)`
   flex: 1;
   display: flex;
   align-items: center;

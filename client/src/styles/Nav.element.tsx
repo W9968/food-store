@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { motion as mo } from 'framer-motion'
 
 export const NavContainer = styled.nav`
   top: 0;
@@ -43,5 +44,49 @@ export const MenuItems = styled(NavLink)`
   &:hover::after {
     left: 0;
     width: 100%;
+  }
+`
+
+// mobile menu
+
+export const Menu = styled.p`
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  position: relative;
+  color: ${(props) => props.theme.foreground};
+
+  &::after {
+    width: 0;
+    left: 50%;
+    height: 2px;
+    content: '';
+    bottom: -5px;
+    position: absolute;
+    transition: all 0.3s;
+    background: ${(props) => props.theme.accent.primary};
+  }
+
+  &:hover::after {
+    left: 0;
+    width: 100%;
+  }
+`
+
+export const SlideMenu = styled(mo.div)`
+  top: 0;
+  left: 0;
+  z-index: 12;
+  width: 450px;
+  height: 100vh;
+  max-height: 100vh;
+  position: absolute;
+  padding: ${(props) => props.theme.units[1]};
+  background: ${(props) => props.theme.background};
+  filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 25%));
+
+  @media (max-width: 480px) {
+    width: 90%;
   }
 `

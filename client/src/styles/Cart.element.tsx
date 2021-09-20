@@ -36,7 +36,7 @@ export const CartWrapper = styled(mo.div)`
   position: absolute;
   padding: ${(props) => props.theme.units[1]};
 
-  @media (max-width: 969px) {
+  @media (max-width: 769px) {
     width: 90%;
     padding: 0;
   }
@@ -48,7 +48,7 @@ export const CartSlide = styled.div`
   border-radius: ${(props) => props.theme.units[1]};
   background: ${(props) => props.theme.background};
   filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 25%));
-  @media (max-width: 969px) {
+  @media (max-width: 769px) {
     border-radius: 0;
   }
 `

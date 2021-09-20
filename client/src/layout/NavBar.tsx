@@ -1,9 +1,12 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router'
 import { NavContainer } from 'styles/Nav.element'
-import { NavBarLogo, MenuDesktop } from 'components/exports'
+import { useMediaQuery } from 'hooks/useMediaQuery'
+import { NavBarLogo, MenuDesktop, MobileMenu } from 'components/exports'
 
 const NavBar: React.FC = () => {
+  console.log(useMediaQuery(769))
+
   const history = useHistory()
   return (
     <NavContainer>
@@ -11,7 +14,7 @@ const NavBar: React.FC = () => {
         onClick={(): void => history.push('/')}
         title={'koul & wakel'}
       />
-      <MenuDesktop />
+      {useMediaQuery(769) ? <MobileMenu /> : <MenuDesktop />}
     </NavContainer>
   )
 }

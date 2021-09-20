@@ -1,6 +1,7 @@
 export { default as Cart } from './cart/_Cart'
 export { default as NavBarLogo } from './logo/NavLogo'
 export { default as MenuDesktop } from './nav/desktopMenu/Menu'
+export { default as MobileMenu } from './nav/mobileMenu/MobileMenu'
 export { default as FirstContactSide } from './contactSides/TextSide'
 export { default as LastContactForm } from './contactSides/FormContact'
 export { default as TextArea } from './input/TextAreaField'

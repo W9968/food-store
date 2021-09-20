@@ -14,12 +14,12 @@ import {
 
 const _Login: React.FC = () => {
   return (
-    <AuthWrapper
-      initial={{ opacity: 0, y: '-10%' }}
-      animate={{ opacity: 1, y: '0%' }}
-      transition={{ type: 'tween' }}>
+    <AuthWrapper>
       <Space />
-      <Container>
+      <Container
+        initial={{ opacity: 0, y: '-10%' }}
+        animate={{ opacity: 1, y: '0%' }}
+        transition={{ type: 'tween' }}>
         <Form>
           <Title>Content de te revoire</Title>
           <Input type='email' placeholer='email...' icon={<BiEnvelope />} />
