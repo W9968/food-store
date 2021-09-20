@@ -1,46 +1,26 @@
 import React from 'react'
-import styled from 'styled-components'
+import { Field } from 'styles/Button.element'
 
 interface Iprops {
   title: string
-  status: boolean
+  status?: boolean
+  icons?: React.ReactNode
 }
 
-const Button: React.FC<Iprops & Record<string, any>> = ({
+const Button: React.FC<Iprops & Record<any, string>> = ({
   title,
   status,
+  icons,
   ...rest
 }) => {
   return (
-    <Field disabled={status} {...rest}>
-      {title}
-    </Field>
+    <>
+      <Field {...rest} disabled={status}>
+        <p style={{ display: 'flex' }}>{title}</p>
+        <div style={{ display: 'flex' }}>{icons}</div>
+      </Field>
+    </>
   )
 }
 
 export default Button
-
-const Field = styled.button`
-  width: 100%;
-  height: 40pt;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  color: ${(props) => props.theme.accent.primary};
-  padding: 0 ${(props) => props.theme.spacing[2]};
-  background: ${(props) => props.theme.mdleground};
-  border-radius: ${(props) => props.theme.border[0]};
-  font-size: ${(props) => props.theme.fontSize.parag};
-  filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 25%));
-
-  &:hover {
-    background: ${(props) => props.theme.accent.shade1};
-  }
-
-  &:focus {
-    background: ${(props) => props.theme.accent.shade2};
-  }
-`

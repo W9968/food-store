@@ -1,83 +1,43 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { Wrapper, Cols, Lines, Resetdiv, RightSide } from 'styles/Form.styles'
-
-// import components
+import Space from 'hooks/useSpace'
+import { Button, Input } from 'components/exports'
+import { BiUser, BiEnvelope, BiLockAlt } from 'react-icons/bi'
 import {
-  Input,
-  Button,
-  HeroAuthText,
-  HeroLeftSide,
-  NavLogo,
-} from 'components/export'
+  AuthWrapper,
+  Container,
+  Form,
+  Title,
+  ChangeRoute,
+  GoToLink,
+} from 'styles/Auth.element'
 
 const _Register: React.FC = () => {
-  const history = useHistory()
   return (
     <>
-      <Wrapper>
-        {/*  this will contain forms */}
-        <Cols
-          className='last-child'
-          initial={{ opacity: 0, x: '-10%' }}
-          animate={{ opacity: 1, x: '0%' }}
-          transition={{ type: 'tween' }}>
-          {/* this one will have form */}
-          <RightSide>
-            <NavLogo type='lg' onClick={() => history.push('/')} />
-            <HeroLeftSide content='Inscrivez à Notre Plateforme' />
-            <Resetdiv>
-              Si vous avez un compte cliquez{' '}
-              <span
-                onClick={(): void => history.push('/login')}
-                style={{
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  fontStyle: 'italic',
-                }}>
-                ici
-              </span>{' '}
-              <br />
-              pour se connecter.
-            </Resetdiv>
-          </RightSide>
-        </Cols>
-        {/* form side, auth login option */}
-        <Cols
-          className='first-child'
-          initial={{ opacity: 0, x: '10%' }}
-          animate={{ opacity: 1, x: '0%' }}
-          transition={{ type: 'tween' }}>
-          <Lines>
-            <HeroAuthText content='Acceder à Votre Compte' />
-            <Input type='text' palceHolder='Entrez votre nom' />
+      <AuthWrapper
+        initial={{ opacity: 0, y: '-10%' }}
+        animate={{ opacity: 1, y: '0%' }}
+        transition={{ type: 'tween' }}>
+        <Space />
+        <Container>
+          <Form>
+            <Title>Inscrivez à Notre Plateforme</Title>
+            <Input type='text' placeholer='nom...' icon={<BiUser />} />
+            <Input type='email' placeholer='email...' icon={<BiEnvelope />} />
             <Input
-              type='email'
-              onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                console.log(e.currentTarget.value)
-              }
-              palceHolder='Entrez votre email'
+              type='password'
+              placeholer='mot de passe...'
+              icon={<BiLockAlt />}
             />
-            <Input type='email' palceHolder='Entrez votre mot de passe' />
-            <Button title='connexion' status={false} />
-          </Lines>
-          {/* this one will havee the reset password button */}
-          <Lines>
-            <Resetdiv>
-              Mot de passe oublié ? cliquez{' '}
-              <span
-                style={{
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  fontStyle: 'italic',
-                }}>
-                ici
-              </span>{' '}
-              pour réinitialiser.
-            </Resetdiv>
-          </Lines>
-        </Cols>
-      </Wrapper>
+            <Button title='se connecter' />
+          </Form>
+          <ChangeRoute>
+            Si vous avez un compte cliquez
+            <GoToLink to='/login'> ici </GoToLink>
+            pour se connecter.
+          </ChangeRoute>
+        </Container>
+      </AuthWrapper>
     </>
   )
 }

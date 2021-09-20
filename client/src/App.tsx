@@ -1,49 +1,31 @@
-import { theme } from 'themes/palette'
+// styling
+import { theme } from 'theme/palette'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle, Container, Column } from 'styles/Global.styles'
-import { BrowserRouter as AppRouter, Route, Switch } from 'react-router-dom'
+import { GlobalStyle } from 'styles/Global.element'
 
-// import views and components
-import { Header } from 'components/export'
-import {
-  LandPage,
-  LoginPage,
-  AboutPage,
-  ContactPage,
-  ProductsPage,
-  RegisterPgae,
-  DashboardPage,
-} from 'views/export'
+// routing
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+// layout components
+import NavBar from 'layout/NavBar'
+
+// views components
+import { HomePage, ContactPage, LoginPage, RegisterPage } from 'views/export'
 
 function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        {/* this component will define our global styling */}
-        <GlobalStyle />
-        {/*  */}
-        <AppRouter>
-          <Container>
-            {/* this column is for the header */}
-            <Column>
-              <Header />
-            </Column>
-            {/* this one is for content and pages */}
-            <Column>
-              <Switch>
-                <Route path='/exec$' component={DashboardPage} />
-                <Route path='/products' component={ProductsPage} />
-                <Route path='/register' component={RegisterPgae} />
-                <Route path='/login' component={LoginPage} />
-                <Route path='/contact' component={ContactPage} />
-                <Route path='/about' component={AboutPage} />
-                <Route path='/' component={LandPage} />
-              </Switch>
-            </Column>
-          </Container>
-        </AppRouter>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path='/register' component={RegisterPage} />
+          <Route path='/login' component={LoginPage} />
+          <Route path='/contact' component={ContactPage} />
+          <Route exact path='/' component={HomePage} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
   )
 }
 

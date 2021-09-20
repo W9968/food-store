@@ -1,9 +1,4 @@
-export { default as LandPage } from './page/_Home'
-export { default as AboutPage } from './page/_About'
-export { default as ContactPage } from './page/_Contact'
-export { default as ProductsPage } from './page/_Products'
-
-export { default as DashboardPage } from './admin/_Dashboard'
-
+export { default as HomePage } from './pages/_Home'
+export { default as ContactPage } from './pages/_Contact'
 export { default as LoginPage } from './auth/_Login'
-export { default as RegisterPgae } from './auth/_Register'
+export { default as RegisterPage } from './auth/_Register'
