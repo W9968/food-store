@@ -26,7 +26,6 @@ export const Form = styled.div`
   margin-top: -10%;
   flex-direction: column;
   justify-content: center;
-  padding: ${(props) => props.theme.units[1]};
   background: ${(props) => props.theme.background};
   border-radius: ${(props) => props.theme.units[2]};
 

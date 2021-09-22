@@ -1,22 +1,26 @@
 import React from 'react'
-import { Field, Input, Wrapper } from 'styles/Input.element'
+import { Field, Input, Wrapper, Message } from 'styles/Input.element'
 
 interface Iprops {
   icon: React.ReactNode
   placeholer: string
   type: string
+  validation?: boolean
+  message?: React.ReactChild
 }
 
 const InputField: React.FC<Iprops & Record<string, any>> = ({
   icon,
   placeholer,
   type,
+  validation,
+  message,
   ...rest
 }) => {
   return (
     <>
       <Field>
-        <Wrapper>
+        <Wrapper isValid={validation ? validation : false}>
           <p style={{ fontSize: '1.5rem', display: 'flex' }}>{icon}</p>
           <Input
             {...rest}
@@ -25,6 +29,7 @@ const InputField: React.FC<Iprops & Record<string, any>> = ({
             autoComplete='no'
           />
         </Wrapper>
+        {validation && <Message>{message}</Message>}
       </Field>
     </>
   )

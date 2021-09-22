@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Field = styled.div`
   margin-top: ${(props) => props.theme.units[2]};
@@ -6,7 +6,11 @@ export const Field = styled.div`
 
 // input field
 
-export const Wrapper = styled.button`
+interface IvalidateProps {
+  readonly isValid: boolean
+}
+
+export const Wrapper = styled.button<IvalidateProps>`
   width: 100%;
   border: none;
   height: 58px;
@@ -19,6 +23,9 @@ export const Wrapper = styled.button`
   border-radius: ${(props) => props.theme.units[0]};
   background: ${(props) => props.theme.accent.tertiary};
 
+  border: ${(props) => props.isValid && css`1px solid`};
+  border-color: ${(props) => props.isValid && props.theme.accent.error};
+
   &::after {
     width: 0;
     left: 50%;
@@ -27,7 +34,8 @@ export const Wrapper = styled.button`
     bottom: 0px;
     position: absolute;
     transition: all 0.3s;
-    background: ${(props) => props.theme.accent.primary};
+    background: ${(props) =>
+      props.isValid ? props.theme.accent.error : props.theme.accent.primary};
   }
 
   &:focus-within {
@@ -102,6 +110,8 @@ export const TextArea = styled.textarea`
   border-radius: ${(props) => props.theme.units[0]};
 `
 
-// checkbox - switch css
-
-export const SwitcherToggle = styled.div``
+export const Message = styled.div`
+  letter-spacing: 1px;
+  color: ${(props) => props.theme.accent.error};
+  font-size: calc(${(props) => props.theme.units[0]} * 2.5);
+`
