@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Field = styled.button`
   width: 100%;
   border: none;
-  height: 48px;
+  height: 58px;
   display: flex;
   outline: none;
   cursor: pointer;
