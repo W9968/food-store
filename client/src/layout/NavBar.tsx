@@ -5,8 +5,6 @@ import { useMediaQuery } from 'hooks/useMediaQuery'
 import { NavBarLogo, MenuDesktop, MobileMenu } from 'components/exports'
 
 const NavBar: React.FC = () => {
-  console.log(useMediaQuery(769))
-
   const history = useHistory()
   return (
     <NavContainer>

@@ -90,3 +90,25 @@ export const SlideMenu = styled(mo.div)`
     width: 90%;
   }
 `
+
+export const ItemsMenuDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: ${(props) => props.theme.units[2]};
+`
+export const MenuMobileItems = styled(NavLink)`
+  font-weight: 500;
+  text-decoration: none;
+  color: ${(props) => props.theme.foreground};
+  margin: ${(props) => props.theme.units[0]} 0;
+  padding: ${(props) => props.theme.units[1]} 0;
+  transition: 200ms ease-in-out;
+  font-size: calc(${(props) => props.theme.units[1]}*1.125);
+
+  &.active {
+    color: ${(props) => props.theme.background};
+    padding: ${(props) => props.theme.units[1]};
+    border-radius: ${(props) => props.theme.units[0]};
+    background: ${(props) => props.theme.accent.primary};
+  }
+`

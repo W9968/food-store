@@ -1,8 +1,15 @@
-import Overlay from 'components/cart/delta/Overlay'
 import React, { useState } from 'react'
-import { BiMenu } from 'react-icons/bi'
-import { Menu, SlideMenu } from 'styles/Nav.element'
+import { BiMenu, BiX } from 'react-icons/bi'
 import { AnimatePresence } from 'framer-motion'
+import { CartHeader } from 'styles/Cart.element'
+import {
+  ItemsMenuDiv,
+  Menu,
+  MenuMobileItems,
+  SlideMenu,
+} from 'styles/Nav.element'
+import Overlay from 'components/cart/delta/Overlay'
+import { Iarray, Items } from '../../items'
 
 const Humburger: React.FC = () => {
   const [state, setState] = useState<boolean>(false)
@@ -23,7 +30,23 @@ const Humburger: React.FC = () => {
               animate={{ opacity: 1, x: '0%' }}
               exit={{ opacity: 0, x: '-30%' }}
               transition={{ type: 'just' }}>
-              sqdsd
+              <CartHeader>
+                <h1>Menu</h1>
+                <button
+                  className='crossX'
+                  onClick={(): void => setState(false)}>
+                  <BiX />
+                </button>
+              </CartHeader>
+              <ItemsMenuDiv>
+                {Items.map((el: Iarray, index: number) => {
+                  return (
+                    <MenuMobileItems key={index} to={el.path}>
+                      {el.name}
+                    </MenuMobileItems>
+                  )
+                })}
+              </ItemsMenuDiv>
             </SlideMenu>
           </>
         )}
