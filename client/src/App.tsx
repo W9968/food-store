@@ -10,7 +10,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from 'layout/NavBar'
 
 // views components
-import { HomePage, ContactPage, LoginPage, RegisterPage } from 'views/export'
+import {
+  HomePage,
+  AboutPage,
+  ContactPage,
+  LoginPage,
+  RegisterPage,
+} from 'views/export'
 
 function App() {
   return (
@@ -22,6 +28,7 @@ function App() {
           <Route path='/register' component={RegisterPage} />
           <Route path='/login' component={LoginPage} />
           <Route path='/contact' component={ContactPage} />
+          <Route path='/about' component={AboutPage} />
           <Route exact path='/' component={HomePage} />
         </Switch>
       </Router>

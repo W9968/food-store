@@ -7,7 +7,7 @@ interface Iprops {
   icons?: React.ReactNode
 }
 
-const Button: React.FC<Iprops & Record<any, string>> = ({
+const Button: React.FC<Iprops & Record<any, any>> = ({
   title,
   status,
   icons,

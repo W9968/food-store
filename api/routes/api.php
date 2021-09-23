@@ -38,3 +38,4 @@ Route::delete('/brand/{id}', [BrandController::class, 'destroy']);
 // product
 Route::get('/product', [ProductController::class, 'index']);
 Route::post('/product', [ProductController::class, 'store']);
+Route::delete('/product/{id}', [ProductController::class, 'destroy']);
