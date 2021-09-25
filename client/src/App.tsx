@@ -18,20 +18,25 @@ import {
   RegisterPage,
 } from 'views/export'
 
+// consumers
+import { UserProvider } from 'global/exports'
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route path='/register' component={RegisterPage} />
-          <Route path='/login' component={LoginPage} />
-          <Route path='/contact' component={ContactPage} />
-          <Route path='/about' component={AboutPage} />
-          <Route exact path='/' component={HomePage} />
-        </Switch>
-      </Router>
+      <UserProvider>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path='/register' component={RegisterPage} />
+            <Route path='/login' component={LoginPage} />
+            <Route path='/contact' component={ContactPage} />
+            <Route path='/about' component={AboutPage} />
+            <Route exact path='/' component={HomePage} />
+          </Switch>
+        </Router>
+      </UserProvider>
     </ThemeProvider>
   )
 }

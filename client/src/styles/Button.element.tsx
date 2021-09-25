@@ -32,4 +32,8 @@ export const Field = styled.button`
   &:focus-within {
     background-position: 0%;
   }
+
+  &:disabled {
+    background: ${(props) => props.theme.accent.secondary};
+  }
 `

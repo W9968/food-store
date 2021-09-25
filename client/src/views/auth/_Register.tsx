@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Space from 'hooks/useSpace'
+import { __auth } from 'global/exports'
 import { Button, Input } from 'components/exports'
 import { BiUser, BiEnvelope, BiLockAlt } from 'react-icons/bi'
 import { fullNameRegex, emailRegex, psswdRegex } from 'validation/inputRegex'
@@ -20,6 +21,9 @@ const _Register: React.FC = () => {
   const [emailPropsValid, setEmailPropsValid] = useState<boolean>(false)
   const [passwordPropsValid, setPasswordPropsValid] = useState<boolean>(false)
   const [fullNamePropsValid, setFullNamePropsValid] = useState<boolean>(false)
+
+  // deconstruction
+  const { register } = __auth()
 
   return (
     <>
@@ -92,7 +96,21 @@ const _Register: React.FC = () => {
                   setPasswordPropsValid(true)
               }}
             />
-            <Button title='se connecter' />
+            <Button
+              status={
+                fullNamePropsValid || emailPropsValid || passwordPropsValid
+                  ? true
+                  : false
+              }
+              title='se connecter'
+              onClick={(): void =>
+                register(
+                  fullNameValidation,
+                  emailValidation,
+                  passwordValidation
+                )
+              }
+            />
           </Form>
           <ChangeRoute>
             Si vous avez un compte cliquez
