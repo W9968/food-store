@@ -21,7 +21,7 @@ const _Login: React.FC = () => {
   const [emailPropsValid, setEmailPropsValid] = useState<boolean>(false)
   const [passwordPropsValid, setPasswordPropsValid] = useState<boolean>(false)
 
-  const { authenticate, logout } = __auth()
+  const { authenticate } = __auth()
 
   return (
     <AuthWrapper>
@@ -83,7 +83,6 @@ const _Login: React.FC = () => {
             title='se connecter'
             onClick={() => authenticate(emailValidation, passwordValidation)}
           />
-          <button onClick={logout}>logout</button>
         </Form>
         <ChangeRoute>
           Si vous n'avez pas de compte cliquez

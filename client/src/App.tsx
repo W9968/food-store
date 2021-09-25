@@ -20,6 +20,7 @@ import {
 
 // consumers
 import { UserProvider } from 'global/exports'
+import ProtectedRoutes from 'routes/ProtectedRoutes'
 
 function App() {
   return (
@@ -29,8 +30,8 @@ function App() {
         <Router>
           <NavBar />
           <Switch>
-            <Route path='/register' component={RegisterPage} />
-            <Route path='/login' component={LoginPage} />
+            <ProtectedRoutes path='/register' component={RegisterPage} />
+            <ProtectedRoutes path='/login' component={LoginPage} />
             <Route path='/contact' component={ContactPage} />
             <Route path='/about' component={AboutPage} />
             <Route exact path='/' component={HomePage} />
