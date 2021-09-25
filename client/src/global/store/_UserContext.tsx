@@ -1,7 +1,6 @@
 import React from 'react'
 import __a from 'hooks/useFetch'
-import { useState } from 'react'
-import { createContext, useContext } from 'react'
+import { useState, useLayoutEffect, createContext, useContext } from 'react'
 
 interface IuserContext {
   currentUser: {}
@@ -30,7 +29,7 @@ const _UserProvider: React.FC = ({ children }) => {
   const keyLoad: string = 'isSubscribed'
 
   const [isSubscribed, setIsSubscribed] = useState<boolean>(
-    initial.isSubscribed
+    localStorage.getItem(keyLoad) === 'true' || initial.isSubscribed
   )
   // disabling this line since setCurrentUser is yet to be used to avoid ES-Lint warning
   // eslint-disable-next-line
@@ -45,7 +44,6 @@ const _UserProvider: React.FC = ({ children }) => {
     userMail: string,
     userPassword: string
   ) => {
-    setIsSubscribed(false)
     // make request to sanctum CSRF endpint to intiailize CSRF protection for our application
     return await __a
       .get('/sanctum/csrf-cookie')
@@ -59,9 +57,11 @@ const _UserProvider: React.FC = ({ children }) => {
                 password: userPassword,
               })
               .then((res) => {
-                // res.status === 204
-                setIsSubscribed(true)
-                localStorage.setItem(keyLoad, `${true}`)
+                if (res.status === 204) {
+                  setIsSubscribed(true)
+                  getCurrentUser()
+                  localStorage.setItem(keyLoad, `${true}`)
+                }
               })
           : setServerResponse(
               'It seems that ours servers are down, sorry for the inconvenience'
@@ -87,9 +87,14 @@ const _UserProvider: React.FC = ({ children }) => {
                 remember: true,
               })
               .then((res) => {
-                // res.status === 200
-                setIsSubscribed(true)
-                localStorage.setItem(keyLoad, `${true}`)
+                if (res.status === 204) {
+                  setIsSubscribed(true)
+                  getCurrentUser()
+                  localStorage.setItem(keyLoad, `${true}`)
+                } else {
+                  setIsSubscribed(false)
+                  localStorage.setItem(keyLoad, `${false}`)
+                }
               })
           : setServerResponse(
               'It seems that ours servers are down, sorry for the inconvenience'
@@ -112,6 +117,7 @@ const _UserProvider: React.FC = ({ children }) => {
               if (res.status === 204) {
                 setIsSubscribed(false)
                 localStorage.setItem(keyLoad, `${false}`)
+                localStorage.setItem('auth', `${new Date()}-REMOVED`)
               }
             })
             .catch(() => {
@@ -123,6 +129,36 @@ const _UserProvider: React.FC = ({ children }) => {
     })
   }
 
+  const [AuthStateChange, setAuthStateChange] = useState<boolean>(false)
+  // current user endpoint
+  const getCurrentUser = async () => {
+    await __a
+      .get('/api/user')
+      .then((res) => {
+        if (res.status === 200) {
+          setIsSubscribed(true)
+          setCurrentUser(res.data)
+          setAuthStateChange(true)
+          localStorage.setItem(keyLoad, `${true}`)
+          localStorage.setItem('auth', JSON.stringify(res.data))
+        } else {
+          setIsSubscribed(false)
+          setAuthStateChange(true)
+          localStorage.setItem(keyLoad, `${false}`)
+          console.clear()
+        }
+      })
+      .catch(() => {
+        setIsSubscribed(false)
+        setAuthStateChange(true)
+        localStorage.setItem(keyLoad, `${false}`)
+        console.clear()
+      })
+  }
+  useLayoutEffect(() => {
+    getCurrentUser()
+  }, [])
+
   return (
     <UserContext.Provider
       value={{
@@ -133,7 +169,7 @@ const _UserProvider: React.FC = ({ children }) => {
         authenticate,
         logout,
       }}>
-      {children}
+      {AuthStateChange ? children : 'hello'}
     </UserContext.Provider>
   )
 }

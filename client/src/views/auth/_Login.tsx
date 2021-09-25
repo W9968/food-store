@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Space from 'hooks/useSpace'
+import { __auth } from 'global/exports'
 import { Button, Input } from 'components/exports'
 import { BiEnvelope, BiLockAlt } from 'react-icons/bi'
 import { emailRegex, psswdRegex } from 'validation/inputRegex'
@@ -12,7 +13,6 @@ import {
   ChangeRoute,
   GoToLink,
 } from 'styles/Auth.element'
-import { __auth } from 'global/exports'
 
 const _Login: React.FC = () => {
   const [emailValidation, setEmailValidation] = useState<string>('')
@@ -21,7 +21,7 @@ const _Login: React.FC = () => {
   const [emailPropsValid, setEmailPropsValid] = useState<boolean>(false)
   const [passwordPropsValid, setPasswordPropsValid] = useState<boolean>(false)
 
-  const { authenticate } = __auth()
+  const { authenticate, logout } = __auth()
 
   return (
     <AuthWrapper>
@@ -83,6 +83,7 @@ const _Login: React.FC = () => {
             title='se connecter'
             onClick={() => authenticate(emailValidation, passwordValidation)}
           />
+          <button onClick={logout}>logout</button>
         </Form>
         <ChangeRoute>
           Si vous n'avez pas de compte cliquez
