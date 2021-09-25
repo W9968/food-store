@@ -7,8 +7,8 @@ interface IuserContext {
   currentUser: {}
   isSubscribed: boolean
   serverResponse: string
-  register: (fullname: string, userMail: string, userPassword: string) => void
   authenticate: (userMail: string, userPassword: string) => void
+  register: (fullname: string, userMail: string, userPassword: string) => void
   logout: () => void
 }
 
@@ -16,8 +16,8 @@ const initial: IuserContext = {
   currentUser: {},
   isSubscribed: false,
   serverResponse: '',
-  register: () => {},
   authenticate: () => {},
+  register: () => {},
   logout: () => {},
 }
 
@@ -25,8 +25,10 @@ const UserContext = createContext<IuserContext>(initial)
 export const __auth = () => useContext(UserContext)
 
 const _UserProvider: React.FC = ({ children }) => {
+  // localstorage key name
+  // a key name we going to use to refrence the value of an authed user
   const keyLoad: string = 'isSubscribed'
-  // global variables
+
   const [isSubscribed, setIsSubscribed] = useState<boolean>(
     initial.isSubscribed
   )
@@ -73,7 +75,32 @@ const _UserProvider: React.FC = ({ children }) => {
   }
 
   // login endpoint
-  const authenticate = async () => {}
+  const authenticate = async (userMail: string, userPassword: string) => {
+    return await __a
+      .get('/sanctum/csrf-cookie')
+      .then((res) => {
+        res.status === 204
+          ? __a
+              .post('/login', {
+                email: userMail,
+                password: userPassword,
+                remember: true,
+              })
+              .then((res) => {
+                // res.status === 200
+                setIsSubscribed(true)
+                localStorage.setItem(keyLoad, `${true}`)
+              })
+          : setServerResponse(
+              'It seems that ours servers are down, sorry for the inconvenience'
+            )
+      })
+      .catch(() =>
+        setServerResponse(
+          'It seems that ours servers are down, sorry for the inconvenience'
+        )
+      )
+  }
 
   // logout endpoint
   const logout = async () => {

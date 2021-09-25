@@ -4,7 +4,6 @@ import { motion as mo } from 'framer-motion'
 
 export const AuthWrapper = styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
   max-width: 100%;
   min-height: 100vh;

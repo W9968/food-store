@@ -12,6 +12,7 @@ import {
   ChangeRoute,
   GoToLink,
 } from 'styles/Auth.element'
+import { __auth } from 'global/exports'
 
 const _Login: React.FC = () => {
   const [emailValidation, setEmailValidation] = useState<string>('')
@@ -19,6 +20,8 @@ const _Login: React.FC = () => {
 
   const [emailPropsValid, setEmailPropsValid] = useState<boolean>(false)
   const [passwordPropsValid, setPasswordPropsValid] = useState<boolean>(false)
+
+  const { authenticate } = __auth()
 
   return (
     <AuthWrapper>
@@ -76,7 +79,10 @@ const _Login: React.FC = () => {
               Mot de passe oublié ?
             </ForgotPaswword>
           </div>
-          <Button title='se connecter' />
+          <Button
+            title='se connecter'
+            onClick={() => authenticate(emailValidation, passwordValidation)}
+          />
         </Form>
         <ChangeRoute>
           Si vous n'avez pas de compte cliquez
