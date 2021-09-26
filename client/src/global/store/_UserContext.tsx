@@ -1,9 +1,20 @@
 import React from 'react'
 import __a from 'hooks/useFetch'
+import { PulseLoader } from 'components/exports'
 import { useState, useLayoutEffect, createContext, useContext } from 'react'
 
+interface Iuser {
+  Guarded?: number
+  created_at?: string
+  email?: string
+  email_verified_at?: any
+  id?: number
+  name?: string
+  updated_at?: string
+}
+
 interface IuserContext {
-  currentUser: {}
+  currentUser: Iuser
   isSubscribed: boolean
   serverResponse: string
   authenticate: (userMail: string, userPassword: string) => void
@@ -31,8 +42,6 @@ const _UserProvider: React.FC = ({ children }) => {
   const [isSubscribed, setIsSubscribed] = useState<boolean>(
     localStorage.getItem(keyLoad) === 'true' || initial.isSubscribed
   )
-  // disabling this line since setCurrentUser is yet to be used to avoid ES-Lint warning
-  // eslint-disable-next-line
   const [currentUser, setCurrentUser] = useState<{}>(initial.currentUser)
   const [serverResponse, setServerResponse] = useState<string>(
     initial.serverResponse
@@ -169,7 +178,7 @@ const _UserProvider: React.FC = ({ children }) => {
         authenticate,
         logout,
       }}>
-      {AuthStateChange ? children : 'hello'}
+      {AuthStateChange ? children : <PulseLoader />}
     </UserContext.Provider>
   )
 }

@@ -1,10 +1,12 @@
 import React from 'react'
+import { __auth } from 'global/exports'
 import { Iarray, Items } from '../items'
-import { Cart } from 'components/exports'
 import { RiShieldUserLine } from 'react-icons/ri'
+import { Cart, DropDownMenu } from 'components/exports'
 import { MenuContainer, MenuItems } from 'styles/Nav.element'
 
 const Menu: React.FC = () => {
+  const { isSubscribed } = __auth()
   return (
     <MenuContainer>
       {Items.map((el: Iarray, index: number) => {
@@ -15,9 +17,13 @@ const Menu: React.FC = () => {
         )
       })}
       <Cart />
-      <MenuItems to='/login'>
-        <RiShieldUserLine style={{ display: 'flex', fontSize: '1.5rem' }} />
-      </MenuItems>
+      {isSubscribed ? (
+        <DropDownMenu />
+      ) : (
+        <MenuItems to='/login'>
+          <RiShieldUserLine style={{ display: 'flex', fontSize: '1.5rem' }} />
+        </MenuItems>
+      )}
     </MenuContainer>
   )
 }
