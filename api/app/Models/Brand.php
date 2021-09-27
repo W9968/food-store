@@ -22,6 +22,16 @@ class Brand extends Model
     ];
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+    /**
      * Get the catalog that owns the Brand
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
