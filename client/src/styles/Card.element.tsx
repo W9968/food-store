@@ -47,3 +47,37 @@ export const Price = styled.div`
   justify-content: space-evenly;
   font-size: calc(${(props) => props.theme.units[1]}* 1.1);
 `
+
+// mobile verision
+
+export const MobileProductCard = styled.div`
+  width: 100%;
+  display: flex;
+  height: 150px;
+  flex-direction: row;
+  border-radius: ${(props) => props.theme.units[1]};
+  background: ${(props) => props.theme.background};
+  filter: drop-shadow(0 4mm 4mm rgba(100, 100, 100, 5%));
+`
+
+export const MobileImage = styled.div`
+  width: 125px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: ${(props) => props.theme.units[1]} 0 0
+    ${(props) => props.theme.units[1]};
+  background: ${(props) => props.theme.accent.tertiary};
+`
+
+export const MobilePhoto = styled.img`
+  width: 85px;
+  height: 100px;
+  display: flex;
+`
+
+export const MobileInfo = styled.div`
+  flex: 1;
+  padding: ${(props) => props.theme.units[1]};
+`

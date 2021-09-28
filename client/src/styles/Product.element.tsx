@@ -14,4 +14,9 @@ export const Container = styled.div`
   grid-gap: 50px;
   padding: ${(props) => props.theme.units[2]};
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (max-width: 769px) {
+    grid-gap: 25px;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
