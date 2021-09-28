@@ -2,6 +2,19 @@ import React, { useState } from 'react'
 import __a from 'hooks/useFetch'
 import { createContext, useContext } from 'react'
 
+export interface Icatalog {
+  id?: number
+  category?: string
+  brands: Ibrands[]
+}
+
+interface Ibrands {
+  id?: number
+  brandName?: string
+  catalog_id?: number
+  products: Iproducts[]
+}
+
 interface Iproducts {
   id?: number
   productName?: string
@@ -13,19 +26,6 @@ interface Iproducts {
   procutExpirationDate?: string
   productFilePathImage?: string
   brand_id?: number
-}
-
-interface Ibrands {
-  id?: number
-  brandName?: string
-  catalog_id?: number
-  products: Iproducts[]
-}
-
-interface Icatalog {
-  id?: number
-  category?: string
-  brands: Ibrands[]
 }
 
 interface IproductContext {
@@ -52,7 +52,7 @@ const _ProductProvider: React.FC = ({ children }) => {
       res.status === 204
         ? __a
             .get('/api/catalog')
-            .then((res) => res.status === 200 && console.log(res.data))
+            .then((res) => res.status === 200 && setAllProducts(res.data))
         : setServerResponse(
             'It seems that ours servers are down, sorry for the inconvenience'
           )
