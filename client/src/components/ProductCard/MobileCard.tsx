@@ -28,7 +28,7 @@ const MobileCard: React.FC<Iprops> = ({
       <MobileImage>
         <MobilePhoto
           alt={productName}
-          src={`http://localhost:800/storage/product${productPic}`}
+          src={`http://localhost:8000/storage/product/${productPic}`}
         />
       </MobileImage>
       <MobileInfo>

@@ -14,6 +14,7 @@ export const ImageContainer = styled.div`
   width: 100%;
   height: 280px;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   border-radius: ${(props) => props.theme.units[1]}
@@ -45,7 +46,26 @@ export const Price = styled.div`
   font-weight: 500;
   flex-direction: row;
   justify-content: space-evenly;
-  font-size: calc(${(props) => props.theme.units[1]}* 1.1);
+  font-size: ${(props) => props.theme.units[1]};
+`
+
+export const Actions = styled.div`
+  left: 5%;
+  bottom: 5%;
+  height: 82px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(-5%, -5%);
+
+  .cardbtn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+  }
 `
 
 // mobile verision
