@@ -39,6 +39,17 @@ const _Products: React.FC = () => {
                   elbrand.products.map((elprod, index: number) => {
                     return (
                       <ProductElement
+                        addedtoCard={{
+                          id: `${elprod.id}`,
+                          name: `${elprod.productName}`,
+                          brand: `${elbrand.brandName}`,
+                          category: `${el.category}`,
+                          newPrice: `${elprod.productNewPrice}`,
+                          oldPrice: `${elprod.productOldPrice}`,
+                          summary: `${elprod.productSummary}`,
+                          pic: `${elprod.productFilePathImage}`,
+                          expirationDate: `${elprod.procutExpirationDate}`,
+                        }}
                         key={index}
                         productName={`${elprod.productName}`}
                         productPic={`${elprod.productFilePathImage}`}

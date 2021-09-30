@@ -1,4 +1,6 @@
 import React from 'react'
+import { __cart } from 'global/exports'
+import { Iproduct } from 'interface/product'
 import { BiCart, BiZoomIn } from 'react-icons/bi'
 import {
   ImageContainer,
@@ -15,6 +17,7 @@ interface Iprops {
   productPic: string
   newPrice: string
   oldPrice: string
+  addedtoCard: Iproduct
 }
 
 const Card: React.FC<Iprops> = ({
@@ -22,7 +25,15 @@ const Card: React.FC<Iprops> = ({
   productPic,
   newPrice,
   oldPrice,
+  addedtoCard,
 }) => {
+  //@ts-ignore
+  const { addProduct, increase, cartItems } = __cart()
+
+  const isInCart = (product: Iproduct) => {
+    return !!cartItems.find((item: Iproduct) => item.id === product.id)
+  }
+
   return (
     <ProductList>
       <ImageContainer>
@@ -32,6 +43,11 @@ const Card: React.FC<Iprops> = ({
         />
         <Actions>
           <button
+            onClick={() => {
+              isInCart(addedtoCard)
+                ? increase(addedtoCard)
+                : addProduct(addedtoCard)
+            }}
             className='cardbtn'
             style={{
               padding: '5px',

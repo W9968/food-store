@@ -20,7 +20,7 @@ import {
 } from 'views/export'
 
 // consumers
-import { UserProvider, ProductProvider } from 'global/exports'
+import { UserProvider, ProductProvider, CartProvider } from 'global/exports'
 import ProtectedRoutes from 'routes/ProtectedRoutes'
 
 function App() {
@@ -29,17 +29,19 @@ function App() {
       <GlobalStyle />
       <UserProvider>
         <ProductProvider>
-          <Router>
-            <NavBar />
-            <Switch>
-              <ProtectedRoutes path='/register' component={RegisterPage} />
-              <ProtectedRoutes path='/login' component={LoginPage} />
-              <Route path='/products' component={ProductPage} />
-              <Route path='/contact' component={ContactPage} />
-              <Route path='/about' component={AboutPage} />
-              <Route exact path='/' component={HomePage} />
-            </Switch>
-          </Router>
+          <CartProvider>
+            <Router>
+              <NavBar />
+              <Switch>
+                <ProtectedRoutes path='/register' component={RegisterPage} />
+                <ProtectedRoutes path='/login' component={LoginPage} />
+                <Route path='/products' component={ProductPage} />
+                <Route path='/contact' component={ContactPage} />
+                <Route path='/about' component={AboutPage} />
+                <Route exact path='/' component={HomePage} />
+              </Switch>
+            </Router>
+          </CartProvider>
         </ProductProvider>
       </UserProvider>
     </ThemeProvider>
