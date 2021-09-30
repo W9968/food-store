@@ -21,7 +21,7 @@ const _Login: React.FC = () => {
   const [emailPropsValid, setEmailPropsValid] = useState<boolean>(false)
   const [passwordPropsValid, setPasswordPropsValid] = useState<boolean>(false)
 
-  const { authenticate } = __auth()
+  const { authenticate, loading } = __auth()
 
   return (
     <AuthWrapper>
@@ -81,6 +81,7 @@ const _Login: React.FC = () => {
           </div>
           <Button
             title='se connecter'
+            status={loading}
             onClick={() => authenticate(emailValidation, passwordValidation)}
           />
         </Form>

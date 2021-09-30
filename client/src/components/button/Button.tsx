@@ -1,5 +1,6 @@
 import React from 'react'
-import { Field } from 'styles/Button.element'
+import { BiLoader } from 'react-icons/bi'
+import { Field, LoadingAnimation } from 'styles/Button.element'
 
 interface Iprops {
   title: string
@@ -16,8 +17,18 @@ const Button: React.FC<Iprops & Record<any, any>> = ({
   return (
     <>
       <Field {...rest} disabled={status}>
-        <p style={{ display: 'flex' }}>{title}</p>
-        <div style={{ display: 'flex' }}>{icons}</div>
+        {status ? (
+          <LoadingAnimation
+            animate={{ rotate: 360 }}
+            transition={{ ease: 'linear', duration: 2, repeat: Infinity }}>
+            <BiLoader style={{ display: 'flex', fontSize: '1.5rem' }} />
+          </LoadingAnimation>
+        ) : (
+          <>
+            <p style={{ display: 'flex' }}>{title}</p>
+            <div style={{ display: 'flex' }}>{icons}</div>
+          </>
+        )}
       </Field>
     </>
   )

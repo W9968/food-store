@@ -41,7 +41,10 @@ const Humburger: React.FC = () => {
               <ItemsMenuDiv>
                 {Items.map((el: Iarray, index: number) => {
                   return (
-                    <MenuMobileItems key={index} to={el.path}>
+                    <MenuMobileItems
+                      key={index}
+                      to={el.path}
+                      onClick={(): void => setState(false)}>
                       {el.name}
                     </MenuMobileItems>
                   )

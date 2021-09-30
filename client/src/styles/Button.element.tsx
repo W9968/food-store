@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion as mo } from 'framer-motion'
 
 export const Field = styled.button`
   width: 100%;
@@ -36,4 +37,8 @@ export const Field = styled.button`
   &:disabled {
     background: ${(props) => props.theme.accent.secondary};
   }
+`
+
+export const LoadingAnimation = styled(mo.span)`
+  display: flex;
 `

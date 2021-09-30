@@ -17,6 +17,7 @@ interface IuserContext {
   currentUser: Iuser
   isSubscribed: boolean
   serverResponse: string
+  loading: boolean
   authenticate: (userMail: string, userPassword: string) => void
   register: (fullname: string, userMail: string, userPassword: string) => void
   logout: () => void
@@ -26,6 +27,7 @@ const initial: IuserContext = {
   currentUser: {},
   isSubscribed: false,
   serverResponse: '',
+  loading: false,
   authenticate: () => {},
   register: () => {},
   logout: () => {},
@@ -39,6 +41,7 @@ const _UserProvider: React.FC = ({ children }) => {
   // a key name we going to use to refrence the value of an authed user
   const keyLoad: string = 'isSubscribed'
 
+  const [loading, setLoading] = useState<boolean>(initial.loading)
   const [isSubscribed, setIsSubscribed] = useState<boolean>(
     localStorage.getItem(keyLoad) === 'true' || initial.isSubscribed
   )
@@ -53,6 +56,7 @@ const _UserProvider: React.FC = ({ children }) => {
     userMail: string,
     userPassword: string
   ) => {
+    setLoading(true)
     // make request to sanctum CSRF endpint to intiailize CSRF protection for our application
     return await __a
       .get('/sanctum/csrf-cookie')
@@ -70,6 +74,7 @@ const _UserProvider: React.FC = ({ children }) => {
                   setIsSubscribed(true)
                   getCurrentUser()
                   localStorage.setItem(keyLoad, `${true}`)
+                  setLoading(false)
                 }
               })
           : setServerResponse(
@@ -85,6 +90,7 @@ const _UserProvider: React.FC = ({ children }) => {
 
   // login endpoint
   const authenticate = async (userMail: string, userPassword: string) => {
+    setLoading(true)
     return await __a
       .get('/sanctum/csrf-cookie')
       .then((res) => {
@@ -100,9 +106,11 @@ const _UserProvider: React.FC = ({ children }) => {
                   setIsSubscribed(true)
                   getCurrentUser()
                   localStorage.setItem(keyLoad, `${true}`)
+                  setLoading(false)
                 } else {
                   setIsSubscribed(false)
                   localStorage.setItem(keyLoad, `${false}`)
+                  setLoading(false)
                 }
               })
           : setServerResponse(
@@ -174,6 +182,7 @@ const _UserProvider: React.FC = ({ children }) => {
         isSubscribed,
         currentUser,
         serverResponse,
+        loading,
         register,
         authenticate,
         logout,
