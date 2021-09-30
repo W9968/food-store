@@ -23,7 +23,7 @@ const _Register: React.FC = () => {
   const [fullNamePropsValid, setFullNamePropsValid] = useState<boolean>(false)
 
   // deconstruction
-  const { register } = __auth()
+  const { register, loading } = __auth()
 
   return (
     <>
@@ -97,11 +97,7 @@ const _Register: React.FC = () => {
               }}
             />
             <Button
-              status={
-                fullNamePropsValid || emailPropsValid || passwordPropsValid
-                  ? true
-                  : false
-              }
+              status={loading}
               title='se connecter'
               onClick={(): void =>
                 register(

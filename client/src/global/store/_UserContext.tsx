@@ -70,10 +70,14 @@ const _UserProvider: React.FC = ({ children }) => {
                 password: userPassword,
               })
               .then((res) => {
-                if (res.status === 204) {
+                if (res.status === 201) {
                   setIsSubscribed(true)
                   getCurrentUser()
                   localStorage.setItem(keyLoad, `${true}`)
+                  setLoading(false)
+                } else {
+                  setIsSubscribed(false)
+                  localStorage.setItem(keyLoad, `${false}`)
                   setLoading(false)
                 }
               })
