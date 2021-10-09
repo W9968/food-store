@@ -28,7 +28,7 @@ const Button = styled(mo.button)`
   align-items: center;
   justify-content: center;
 `
-const Text = styled.h2`
-  text-transform: uppercase;
-  font-family: 'Poppins', sans-serif;
+const Text = styled.p`
+  font-size: 20px;
+  color: ${(props) => props.theme.background};
 `

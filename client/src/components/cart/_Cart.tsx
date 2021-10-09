@@ -15,7 +15,7 @@ const _Cart: React.FC = () => {
   return (
     <>
       <Cart onClick={(): void => setActive(true)}>
-        <RiShoppingBag3Line style={{ display: 'flex', fontSize: '1.5rem' }} />
+        <RiShoppingBag3Line style={{ display: 'flex', fontSize: '20px' }} />
         <AnimatePresence>
           {itemCount !== 0 && (
             <CartCountTotel

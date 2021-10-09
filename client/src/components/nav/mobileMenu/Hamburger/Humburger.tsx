@@ -17,7 +17,9 @@ const Humburger: React.FC = () => {
   return (
     <>
       <Menu onClick={(): void => setState(true)}>
-        <BiMenu style={{ display: 'flex', fontSize: '1.6rem' }} />
+        <BiMenu
+          style={{ display: 'flex', fontSize: '20px', marginLeft: '5px' }}
+        />
       </Menu>
       <AnimatePresence>
         {state && (

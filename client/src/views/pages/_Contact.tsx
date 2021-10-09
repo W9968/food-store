@@ -6,10 +6,7 @@ import { FirstContactSide, InfoCard, LastContactForm } from 'components/exports'
 const _Contact: React.FC = () => {
   return (
     <>
-      <ContactWrapper
-        initial={{ opacity: 0, y: '-10%' }}
-        animate={{ opacity: 1, y: '0%' }}
-        transition={{ type: 'tween' }}>
+      <ContactWrapper>
         <Space />
         <ContactInfo>
           <Cols>

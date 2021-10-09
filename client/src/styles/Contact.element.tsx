@@ -1,16 +1,10 @@
 import styled from 'styled-components'
 import { motion as mo } from 'framer-motion'
 
-export const ContactWrapper = styled(mo.div)`
+export const ContactWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    to bottom,
-    ${(props) => props.theme.accent.secondary},
-    /* we removed the 60% to have blur effect */
-      ${(props) => props.theme.background} 40%
-  );
 `
 
 export const ContactInfo = styled.div`

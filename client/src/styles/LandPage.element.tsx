@@ -14,12 +14,15 @@ export const Wrapper = styled(mo.div)`
 `
 
 export const HeroSection = styled.div`
-  flex: 1;
+  width: 100%;
+  height: 750px;
   display: flex;
-  margin: 0 auto;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/asset/bgland.jpg');
 `
 
 export const TitleHero = styled.h1`
@@ -27,16 +30,7 @@ export const TitleHero = styled.h1`
   text-align: end;
   margin-top: 25px;
   text-align: center;
-  font-family: 'Amiri', serif;
-`
-
-export const Image = styled.img`
-  width: 50vh;
-  display: flex;
-
-  @media (max-width: 50vh) {
-    width: 90%;
-  }
+  color: ${(props) => props.theme.background};
 `
 
 export const GoToLink = styled(NavLink)`

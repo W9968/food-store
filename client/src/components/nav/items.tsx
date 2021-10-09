@@ -4,7 +4,6 @@ export interface Iarray {
 }
 
 export const Items: Iarray[] = [
-  { name: 'Produits', path: '/products' },
   { name: 'A propos', path: '/about' },
   { name: 'Nous Contacter', path: '/contact' },
 ]

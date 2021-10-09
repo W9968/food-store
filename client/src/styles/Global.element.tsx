@@ -9,11 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     
     html,body {
         max-width: 100%;
-        font-weight: 400;
+        font-weight: 500;
         min-height: 100vh;
         font-style: normal;
         text-rendering: optimizeSpeed;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;
     }
 
     ::selection {

@@ -11,6 +11,8 @@ declare module 'styled-components' {
       secondary: string
       tertiary: string
       quaternary: string
+
+      hover: string
       error: string
       success: string
     }
@@ -28,9 +30,11 @@ export const theme: DefaultTheme = {
     secondary: '#dbcff0',
     tertiary: '#F6F8FC',
     quaternary: '#8133f1',
+
+    hover: '#424242',
     error: '#EE0000',
     success: '#50E3C2',
   },
 
-  units: ['0.313rem', '1rem', '2rem'],
+  units: ['0.313rem', '12px', '10px 12px', '14px'],
 }

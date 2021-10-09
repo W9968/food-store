@@ -1,12 +1,7 @@
 import React from 'react'
-import { LandPage } from 'components/exports'
 
 const _Home: React.FC = () => {
-  return (
-    <>
-      <LandPage />
-    </>
-  )
+  return <></>
 }
 
 export default _Home

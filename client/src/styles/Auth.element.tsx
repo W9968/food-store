@@ -5,8 +5,6 @@ import { motion as mo } from 'framer-motion'
 export const AuthWrapper = styled.div`
   width: 100%;
   display: flex;
-  max-width: 100%;
-  min-height: 100vh;
   flex-direction: column;
 `
 
@@ -22,7 +20,6 @@ export const Form = styled.div`
   flex: 1;
   width: 500px;
   display: flex;
-  margin-top: -10%;
   flex-direction: column;
   justify-content: center;
   background: ${(props) => props.theme.background};

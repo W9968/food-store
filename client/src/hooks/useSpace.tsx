@@ -1,5 +1,5 @@
 const Space = () => {
-  return <div style={{ width: '100% ', height: '64px' }} />
+  return <div style={{ width: '100% ', minHeight: '56px' }} />
 }
 
 export default Space

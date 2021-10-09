@@ -3,47 +3,112 @@ import { NavLink } from 'react-router-dom'
 import { motion as mo } from 'framer-motion'
 
 export const NavContainer = styled.nav`
-  top: 0;
-  z-index: 10;
-  width: 100%;
+  height: 64px;
   display: flex;
-  position: absolute;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  padding: ${(props) => props.theme.units[1]};
+  background: ${(props) => props.theme.foreground};
+`
+
+export const MenuWidh = styled.div`
+  width: 1406px;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  padding: ${(props) => props.theme.units[1]} ${(props) => props.theme.units[2]};
+
+  @media (max-width: 1406px) {
+    width: 100%;
+  }
 `
 
 export const MenuContainer = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex: none;
+    justify-content: flex-end;
+  }
 `
+
+export const Cols = styled.div`
+  &:first-child {
+    display: flex;
+    align-items: center;
+    padding: 0 calc(${(props) => props.theme.units[1]}*2);
+  }
+
+  &:last-child {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+`
+
 export const MenuItems = styled(NavLink)`
-  font-weight: 600;
-  position: relative;
+  letter-spacing: 1px;
+  border-radius: 30px;
   text-decoration: none;
+  padding: ${(props) => props.theme.units[2]};
+  color: ${(props) => props.theme.background};
+  font-size: ${(props) => props.theme.units[3]};
+  margin-right: ${(props) => props.theme.units[0]};
+
+  &:hover {
+    background: ${(props) => props.theme.accent.hover};
+  }
+
+  &.active {
+    background: ${(props) => props.theme.accent.hover};
+  }
+`
+
+export const ProductButton = styled.button`
+  border: none;
+  display: flex;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: none;
+  align-items: center;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  text-decoration: none;
+  justify-content: center;
+  text-transform: capitalize;
+  font-family: 'Inter', sans-serif;
+  padding: ${(props) => props.theme.units[2]};
+  color: ${(props) => props.theme.background};
+  margin-right: ${(props) => props.theme.units[0]};
+
+  &:hover {
+    background: ${(props) => props.theme.accent.hover};
+  }
+
+  > p {
+    font-size: ${(props) => props.theme.units[3]};
+  }
+`
+
+export const LoginButton = styled(NavLink)`
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  text-decoration: none;
+  justify-content: center;
+  text-transform: capitalize;
+  padding: ${(props) => props.theme.units[2]};
   color: ${(props) => props.theme.foreground};
-
-  &:not(:last-child) {
-    margin-right: ${(props) => props.theme.units[2]};
-  }
-
-  &::after {
-    width: 0;
-    left: 50%;
-    height: 2px;
-    content: '';
-    bottom: -5px;
-    position: absolute;
-    transition: all 0.3s;
-    background: ${(props) => props.theme.accent.primary};
-  }
-
-  &:hover::after {
-    left: 0;
-    width: 100%;
+  background: ${(props) => props.theme.background};
+  > p {
+    font-size: ${(props) => props.theme.units[3]};
   }
 `
 
@@ -54,24 +119,8 @@ export const Menu = styled.p`
   outline: none;
   cursor: pointer;
   background: none;
-  position: relative;
-  color: ${(props) => props.theme.foreground};
-
-  &::after {
-    width: 0;
-    left: 50%;
-    height: 2px;
-    content: '';
-    bottom: -5px;
-    position: absolute;
-    transition: all 0.3s;
-    background: ${(props) => props.theme.accent.primary};
-  }
-
-  &:hover::after {
-    left: 0;
-    width: 100%;
-  }
+  color: ${(props) => props.theme.background};
+  padding-left: ${(props) => props.theme.units[1]};
 `
 
 export const SlideMenu = styled(mo.div)`

@@ -6,24 +6,7 @@ export const Cart = styled.p`
   font-weight: 500;
   position: relative;
   text-decoration: none;
-  color: ${(props) => props.theme.foreground};
-  margin-right: ${(props) => props.theme.units[1]};
-
-  &::after {
-    width: 0;
-    left: 50%;
-    height: 2px;
-    content: '';
-    bottom: -5px;
-    position: absolute;
-    transition: all 0.3s;
-    background: ${(props) => props.theme.accent.primary};
-  }
-
-  &:hover::after {
-    left: 0;
-    width: 100%;
-  }
+  color: ${(props) => props.theme.background};
 `
 
 export const CartWrapper = styled(mo.div)`
@@ -68,18 +51,17 @@ export const CartHeader = styled.div`
 `
 
 export const CartCountTotel = styled(mo.p)`
-  top: -5px;
-  left: -7px;
-  width: 14px;
-  height: 14px;
-  padding: 10px;
+  top: -8px;
+  left: -9px;
+  width: 18px;
+  height: 18px;
   display: flex;
-  font-size: 12px;
+  font-size: 10px;
   position: absolute;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transform: translate(-7px, -5px);
-  color: ${(props) => props.theme.background};
-  background: ${(props) => props.theme.foreground};
+  transform: translate(-9px, -8px);
+  color: ${(props) => props.theme.foreground};
+  background: ${(props) => props.theme.background};
 `
