@@ -66,3 +66,20 @@ export const CartHeader = styled.div`
     background: none;
   }
 `
+
+export const CartCountTotel = styled(mo.p)`
+  top: -5px;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  padding: 10px;
+  display: flex;
+  font-size: 12px;
+  position: absolute;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-7px, -5px);
+  color: ${(props) => props.theme.background};
+  background: ${(props) => props.theme.foreground};
+`

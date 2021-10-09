@@ -166,6 +166,7 @@ const _UserProvider: React.FC = ({ children }) => {
           setIsSubscribed(false)
           setAuthStateChange(true)
           localStorage.setItem(keyLoad, `${false}`)
+          localStorage.setItem('auth', `${new Date()}-REMOVED`)
           console.clear()
         }
       })
@@ -173,6 +174,7 @@ const _UserProvider: React.FC = ({ children }) => {
         setIsSubscribed(false)
         setAuthStateChange(true)
         localStorage.setItem(keyLoad, `${false}`)
+        localStorage.setItem('auth', `${new Date()}-REMOVED`)
         console.clear()
       })
   }
