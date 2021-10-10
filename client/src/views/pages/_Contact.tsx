@@ -1,5 +1,4 @@
 import React from 'react'
-import Space from 'hooks/useSpace'
 import { ContactWrapper, ContactInfo, Cols } from 'styles/Contact.element'
 import { FirstContactSide, InfoCard, LastContactForm } from 'components/exports'
 
@@ -7,7 +6,6 @@ const _Contact: React.FC = () => {
   return (
     <>
       <ContactWrapper>
-        <Space />
         <ContactInfo>
           <Cols>
             <FirstContactSide

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Field = styled.div`
-  margin-top: ${(props) => props.theme.units[2]};
+  margin-top: ${(props) => props.theme.units[4]};
 `
 
 // input field
@@ -22,7 +22,6 @@ export const Wrapper = styled.button<IvalidateProps>`
   padding: 0 ${(props) => props.theme.units[1]};
   border-radius: ${(props) => props.theme.units[0]};
   background: ${(props) => props.theme.accent.tertiary};
-
   border: ${(props) => props.isValid && css`1px solid`};
   border-color: ${(props) => props.isValid && props.theme.accent.error};
 

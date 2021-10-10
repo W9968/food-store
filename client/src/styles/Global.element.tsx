@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     *,*::after,*::before {
@@ -8,12 +8,15 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     html,body {
+        display: flex;
         max-width: 100%;
         font-weight: 500;
         min-height: 100vh;
         font-style: normal;
+        flex-direction: column;
         text-rendering: optimizeSpeed;
         font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
     }
 
     ::selection {
@@ -32,4 +35,18 @@ export const GlobalStyle = createGlobalStyle`
         background: none; 
     }
 
+`
+
+export const Main = styled.main`
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  background-color: none;
+  flex-direction: column;
+
+  > span {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 `

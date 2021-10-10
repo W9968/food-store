@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Space from 'hooks/useSpace'
 import { __auth } from 'global/exports'
 import { Button, Input } from 'components/exports'
 import { BiEnvelope, BiLockAlt } from 'react-icons/bi'
@@ -25,7 +24,6 @@ const _Login: React.FC = () => {
 
   return (
     <AuthWrapper>
-      <Space />
       <Container
         initial={{ opacity: 0, y: '-10%' }}
         animate={{ opacity: 1, y: '0%' }}

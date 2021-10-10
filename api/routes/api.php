@@ -28,6 +28,7 @@ Route::post('/catalog', [CatalogController::class, 'store']);
 Route::get('/catalog/{id}', [CatalogController::class, 'show']);
 Route::patch('/catalog/{id}', [CatalogController::class,'update']);
 Route::delete('/catalog/{id}', [CatalogController::class, 'destroy']);
+Route::get('/catalog=first', [CatalogController::class, 'getOnlyCatalog']);
 
 // brand
 Route::get('/brand', [BrandController::class, 'index']);

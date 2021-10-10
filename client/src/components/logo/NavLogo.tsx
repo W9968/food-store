@@ -2,17 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion as mo } from 'framer-motion'
 
-interface Irpops {
-  title: string
-}
-
-const NavLogo: React.FC<Irpops & Record<string, any>> = ({
-  title,
-  ...rest
-}) => {
+const NavLogo: React.FC<Record<string, any>> = ({ ...rest }) => {
   return (
     <Button whileTap={{ scale: 0.8 }} {...rest}>
-      <Text>{title}</Text>
+      <Photo src={'/asset/Frame2.png'} alt={'logo food store bag shopping'} />
+      <Title>aana makhir</Title>
     </Button>
   )
 }
@@ -27,8 +21,14 @@ const Button = styled(mo.button)`
   background: none;
   align-items: center;
   justify-content: center;
-`
-const Text = styled.p`
-  font-size: 20px;
+  font-family: 'Caveat', cursive;
   color: ${(props) => props.theme.background};
+`
+const Photo = styled.img`
+  display: flex;
+`
+
+const Title = styled.p`
+  font-size: 18px;
+  text-transform: capitalize;
 `

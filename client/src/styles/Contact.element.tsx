@@ -2,20 +2,24 @@ import styled from 'styled-components'
 import { motion as mo } from 'framer-motion'
 
 export const ContactWrapper = styled.div`
+  flex: 1;
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  padding: ${(props) => props.theme.units[4]};
 `
 
 export const ContactInfo = styled.div`
   flex: 1;
   display: flex;
-  width: 1400px;
+  width: 1406px;
+  margin-top: 5%;
   flex-direction: row;
-  margin: 25px auto 0 auto;
   justify-content: space-between;
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1406px) {
     width: 100%;
   }
 
@@ -29,7 +33,6 @@ export const Cols = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: ${(props) => props.theme.units[2]};
 `
 
 export const TextSideStyle = styled(mo.div)`

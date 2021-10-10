@@ -1,43 +1,22 @@
 import React, { useState } from 'react'
 import __a from 'hooks/useFetch'
 import { createContext, useContext } from 'react'
-
-export interface Icatalog {
-  id?: number
-  category?: string
-  brands: Ibrands[]
-}
-
-interface Ibrands {
-  id?: number
-  brandName?: string
-  catalog_id?: number
-  products: Iproducts[]
-}
-
-interface Iproducts {
-  id?: number
-  productName?: string
-  productSummary?: string
-  productOldPrice?: string
-  productNewPrice?: string
-  productDesription?: string
-  productInventory?: number
-  procutExpirationDate?: string
-  productFilePathImage?: string
-  brand_id?: number
-}
+import { Icatalog, Icatalogonly } from '../interface/Iproducts'
 
 interface IproductContext {
   allProducts: Icatalog[]
+  allCatalog: Icatalogonly[]
   serverResponse: string
   getAllProduct: () => void
+  getCategories: () => void
 }
 
 const intial: IproductContext = {
   allProducts: [],
+  allCatalog: [],
   serverResponse: '',
   getAllProduct: () => {},
+  getCategories: () => {},
 }
 
 const ProductContext = createContext<IproductContext>(intial)
@@ -45,6 +24,9 @@ export const __service = () => useContext(ProductContext)
 
 const _ProductProvider: React.FC = ({ children }) => {
   const [allProducts, setAllProducts] = useState<Icatalog[]>(intial.allProducts)
+  const [allCatalog, setAllCatalog] = useState<Icatalogonly[]>(
+    intial.allCatalog
+  )
   const [serverResponse, setServerResponse] = useState(intial.serverResponse)
 
   const getAllProduct = async () => {
@@ -58,9 +40,28 @@ const _ProductProvider: React.FC = ({ children }) => {
           )
     })
   }
+
+  const getCategories = async () => {
+    return await __a.get('/sanctum/csrf-cookie').then((res) => {
+      res.status === 204
+        ? __a
+            .get('/api/catalog=first')
+            .then((res) => res.status === 200 && setAllCatalog(res.data))
+        : setServerResponse(
+            'It seems that ours servers are down, sorry for the inconvenience'
+          )
+    })
+  }
+
   return (
     <ProductContext.Provider
-      value={{ allProducts, serverResponse, getAllProduct }}>
+      value={{
+        allProducts,
+        allCatalog,
+        serverResponse,
+        getAllProduct,
+        getCategories,
+      }}>
       {children}
     </ProductContext.Provider>
   )

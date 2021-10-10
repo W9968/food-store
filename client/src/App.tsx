@@ -1,7 +1,7 @@
 // styling
 import { theme } from 'theme/palette'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from 'styles/Global.element'
+import { GlobalStyle, Main } from 'styles/Global.element'
 
 // routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -31,15 +31,22 @@ function App() {
         <ProductProvider>
           <CartProvider>
             <Router>
-              <NavBar />
-              <Switch>
-                <ProtectedRoutes path='/register' component={RegisterPage} />
-                <ProtectedRoutes path='/login' component={LoginPage} />
-                <Route path='/products' component={ProductPage} />
-                <Route path='/contact' component={ContactPage} />
-                <Route path='/about' component={AboutPage} />
-                <Route exact path='/' component={HomePage} />
-              </Switch>
+              <Main>
+                <NavBar />
+                <span>
+                  <Switch>
+                    <ProtectedRoutes
+                      path='/register'
+                      component={RegisterPage}
+                    />
+                    <ProtectedRoutes path='/login' component={LoginPage} />
+                    <Route path='/products' component={ProductPage} />
+                    <Route path='/contact' component={ContactPage} />
+                    <Route path='/about' component={AboutPage} />
+                    <Route exact path='/' component={HomePage} />
+                  </Switch>
+                </span>
+              </Main>
             </Router>
           </CartProvider>
         </ProductProvider>

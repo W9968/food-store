@@ -62,10 +62,6 @@ export const MenuItems = styled(NavLink)`
   &:hover {
     background: ${(props) => props.theme.accent.hover};
   }
-
-  &.active {
-    background: ${(props) => props.theme.accent.hover};
-  }
 `
 
 export const ProductButton = styled.button`
@@ -92,6 +88,32 @@ export const ProductButton = styled.button`
 
   > p {
     font-size: ${(props) => props.theme.units[3]};
+  }
+`
+
+export const ProductCatalogDropDown = styled(mo.div)`
+  left: 0%;
+  top: 100%;
+  width: 200px;
+  position: absolute;
+  border-radius: 5px;
+  background: ${(props) => props.theme.background};
+  filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 5%));
+`
+
+export const ListItemCatalog = styled(mo.p)`
+  cursor: pointer;
+  padding: ${(props) => props.theme.units[2]};
+
+  &:first-child {
+    margin-top: 10px;
+  }
+
+  > a {
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: ${(props) => props.theme.foreground};
   }
 `
 

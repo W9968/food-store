@@ -1,6 +1,6 @@
 import React from 'react'
 import { __cart } from 'global/exports'
-import { Iproduct } from 'interface/product'
+import { IcardProduct } from 'global/interface/Iproducts'
 import { BiCart, BiZoomIn } from 'react-icons/bi'
 import {
   ImageContainer,
@@ -17,7 +17,7 @@ interface Iprops {
   productPic: string
   newPrice: string
   oldPrice: string
-  addedtoCard: Iproduct
+  addedtoCard: IcardProduct
 }
 
 const Card: React.FC<Iprops> = ({
@@ -30,8 +30,8 @@ const Card: React.FC<Iprops> = ({
   //@ts-ignore
   const { addProduct, increase, cartItems } = __cart()
 
-  const isInCart = (product: Iproduct) => {
-    return !!cartItems.find((item: Iproduct) => item.id === product.id)
+  const isInCart = (product: IcardProduct) => {
+    return !!cartItems.find((item: IcardProduct) => item.id === product.id)
   }
 
   return (

@@ -27,14 +27,14 @@ export const theme: DefaultTheme = {
 
   accent: {
     primary: '#6200ee',
-    secondary: '#dbcff0',
-    tertiary: '#F6F8FC',
     quaternary: '#8133f1',
 
-    hover: '#424242',
+    tertiary: '#F6F8FC',
+    secondary: '##cfd7cc',
+    hover: '#545454',
     error: '#EE0000',
     success: '#50E3C2',
   },
 
-  units: ['0.313rem', '12px', '10px 12px', '14px'],
+  units: ['0.313rem', '12px', '10px 12px', '14px', '16px'],
 }

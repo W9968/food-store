@@ -9,7 +9,7 @@ const NavBar: React.FC = () => {
   return (
     <NavContainer>
       <MenuWidh>
-        <NavBarLogo onClick={(): void => history.push('/')} title={'STORE'} />
+        <NavBarLogo onClick={(): void => history.push('/')} />
         {useMediaQuery(769) ? <MobileMenu /> : <MenuDesktop />}
       </MenuWidh>
     </NavContainer>
