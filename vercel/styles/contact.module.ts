@@ -18,12 +18,12 @@ export const Container = styled.div`
 
 export const Col = styled.div`
   > p {
-    width: 360px;
+    width: 500px;
     font-size: ${(props) => props.theme.units._16};
     line-height: calc(${(props) => props.theme.units._16} * 1.5);
     color: ${(props) => props.theme.accent.textshade};
 
-    @media (max-width: 450px) {
+    @media (max-width: 550px) {
       width: 100%;
     }
   }
@@ -36,21 +36,17 @@ export const Col = styled.div`
   }
 `
 
-export const HeadingUs = styled.h1`
+export const HeadingUs = styled.div`
   margin-bottom: 24px;
   font-family: 'Noto Serif Display', serif;
   font-size: ${(props) => props.theme.units._72};
 `
 
 export const FormContact = styled.form`
-  width: 500px;
+  width: 700px;
   margin-top: 42px;
 
-  @media (max-width: 1000px) {
-    margin-top: 8%;
-  }
-
-  @media (max-width: 550px) {
+  @media (max-width: 750px) {
     width: 100%;
   }
 `
