@@ -17,8 +17,8 @@ const _Login: React.FC = () => {
   const [emailValidation, setEmailValidation] = useState<string>('')
   const [passwordValidation, setPasswordValidation] = useState<string>('')
 
-  const [emailPropsValid, setEmailPropsValid] = useState<boolean>(false)
-  const [passwordPropsValid, setPasswordPropsValid] = useState<boolean>(false)
+  const [emailPropsValid, setEmailPropsValid] = useState(false)
+  const [passwordPropsValid, setPasswordPropsValid] = useState(false)
 
   const { authenticate, loading } = __auth()
 

@@ -29,8 +29,9 @@ export const theme: DefaultTheme = {
     primary: '#6200ee',
     quaternary: '#8133f1',
 
-    tertiary: '#F6F8FC',
-    secondary: '##cfd7cc',
+    secondary: '#cfd7cc',
+    tertiary: '#f5f9fa',
+
     hover: '#545454',
     error: '#EE0000',
     success: '#50E3C2',

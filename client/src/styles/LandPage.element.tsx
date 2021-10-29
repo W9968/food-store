@@ -7,7 +7,7 @@ export const Wrapper = styled(mo.div)`
   height: 700px;
   display: flex;
   flex-direction: column;
-  background: #cfd7cc;
+  background: ${(props) => props.theme.accent.secondary};
 
   @media (max-height: 600px) {
     height: 480px;

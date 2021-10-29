@@ -1,0 +1,16 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "@next/next/no-document-import-in-page": "off"
+  }
+}
+
+// A known issue that is fixed in #28596
+/* 
+the problem is i can't import next/docuemt unless 
+i update to NextJs to 11.1.3-canary-7 and i don't want to
+*/
+
+// If you don't want to update to the canary versions and
+// still keep working normally just exclude it from
+// your .eslintrc.json rules

@@ -4,7 +4,7 @@ import { motion as mo } from 'framer-motion'
 export const Field = styled.button`
   width: 100%;
   border: none;
-  height: 58px;
+  height: 48px;
   display: flex;
   outline: none;
   cursor: pointer;
@@ -13,7 +13,7 @@ export const Field = styled.button`
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', serif;
   color: ${(props) => props.theme.background};
   padding: ${(props) => props.theme.units[1]};
   margin-top: calc(${(props) => props.theme.units[2]} * 2);
