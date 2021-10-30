@@ -28,11 +28,24 @@ export const Col = styled.div`
     }
   }
 
+  &:first-child {
+    @media (max-width: 1000px) {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
   &:last-child {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: 1000px) {
+      align-items: center;
+    }
   }
 `
 

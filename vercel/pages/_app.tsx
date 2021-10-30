@@ -5,14 +5,17 @@ import { ThemeProvider } from 'styled-components'
 
 // layout for dynamic CSR
 import Layout from 'layout/layout'
+import { AuthContext } from 'store/export'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <AuthContext>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AuthContext>
     </ThemeProvider>
   )
 }
