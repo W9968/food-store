@@ -48,13 +48,13 @@ export const Col = styled.div`
   &:last-child {
     flex: 1;
     display: flex;
-    border-radius: 25px;
     background-size: cover;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    margin: 0px 0px 52px 52px;
-    background-image: url('https://cdn.dribbble.com/users/5166438/screenshots/13905757/media/ed52465176425610bf9a2d0965521d7a.png?compress=1&resize=1200x900');
+    margin: 0px 0px 52px 100px;
+    background-size: cover;
+    background-image: url('https://cdn.dribbble.com/users/2567722/screenshots/11952304/media/1792c4c5c2a0a7559a50a1c845453c7f.png?compress=1&resize=1200x900');
 
     @media (max-width: 1000px) {
       background-repeat: no-repeat;
@@ -84,10 +84,10 @@ export const FormContact = styled.form`
 export const Card = styled.div`
   width: 400px;
   display: flex;
-  border-radius: 15px;
+  border-radius: 0px;
   align-items: center;
-  margin: 0 ${(props) => props.theme.units._16};
-  padding: ${(props) => props.theme.units._16} 0;
+  margin: ${(props) => props.theme.units._16};
+  padding: ${(props) => props.theme.units._16};
 
   @media (max-width: 550px) {
     width: 100%;
@@ -103,5 +103,6 @@ export const Card = styled.div`
   & > p {
     font-weight: 600;
     letter-spacing: 0.5px;
+    color: ${(props) => props.theme.scheme.body};
   }
 `
