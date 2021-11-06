@@ -11,6 +11,7 @@ export const Main = styled.main`
 export const Composition = styled.section`
   &:last-child {
     flex: 1;
+    margin: 0 2vw;
     display: flex;
     flex-direction: column;
   }

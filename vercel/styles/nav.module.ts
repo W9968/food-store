@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Header = styled.nav`
+  margin: 0 2vw;
   display: flex;
   flex-direction: row;
   align-items: center;
