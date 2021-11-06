@@ -57,10 +57,15 @@ export const Col = styled.div`
     background-image: url('https://cdn.dribbble.com/users/2567722/screenshots/11952304/media/1792c4c5c2a0a7559a50a1c845453c7f.png?compress=1&resize=1200x900');
 
     @media (max-width: 1000px) {
-      background-repeat: no-repeat;
-      align-items: flex-start;
-      background-size: 500%;
-      margin: 52px 0px;
+      width: 700px;
+      margin: 0 auto;
+      border-radius: 15px;
+      background: ${(props) => props.theme.accent.white};
+      filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 5%));
+    }
+
+    @media (max-width: 750px) {
+      display: none;
     }
   }
 `
@@ -86,7 +91,7 @@ export const Card = styled.div`
   display: flex;
   border-radius: 0px;
   align-items: center;
-  margin: ${(props) => props.theme.units._16};
+  margin: 0 ${(props) => props.theme.units._16};
   padding: ${(props) => props.theme.units._16};
 
   @media (max-width: 550px) {
@@ -97,12 +102,20 @@ export const Card = styled.div`
     display: flex;
     font-size: 1.5rem;
     margin-right: 10px;
-    color: ${(props) => props.theme.scheme.domi};
+    color: ${(props) => props.theme.scheme.body};
+
+    @media (max-width: 1000px) {
+      color: ${(props) => props.theme.scheme.domi};
+    }
   }
 
   & > p {
     font-weight: 600;
     letter-spacing: 0.5px;
     color: ${(props) => props.theme.scheme.body};
+
+    @media (max-width: 1000px) {
+      color: ${(props) => props.theme.scheme.text};
+    }
   }
 `
