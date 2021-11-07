@@ -11,8 +11,12 @@ export const Main = styled.main`
 export const Composition = styled.section`
   &:last-child {
     flex: 1;
-    margin: 0 2vw;
     display: flex;
+    margin: 0 10vw;
     flex-direction: column;
+
+    @media (max-width: 1400px) {
+      margin: 0 2vw;
+    }
   }
 `

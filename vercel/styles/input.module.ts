@@ -83,6 +83,7 @@ export const AreaIcon = styled.div`
 
 export const AreaContent = styled.textarea`
   flex: 1;
+  resize: none;
   border: none;
   height: 250px;
   outline: none;

@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
 `
 
 export const Container = styled.div`
-  flex: 1;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -24,10 +23,10 @@ export const Col = styled.div`
   > span > p {
     width: 500px;
     font-size: ${(props) => props.theme.units._16};
-    line-height: calc(${(props) => props.theme.units._16} * 1.5);
     color: ${(props) => props.theme.accent.textshade};
+    line-height: calc(${(props) => props.theme.units._16} * 1.5);
 
-    @media (max-width: 550px) {
+    @media (max-width: 750px) {
       width: 100%;
     }
   }
@@ -35,7 +34,7 @@ export const Col = styled.div`
   &:first-child {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     @media (max-width: 1000px) {
       display: flex;
@@ -48,24 +47,14 @@ export const Col = styled.div`
   &:last-child {
     flex: 1;
     display: flex;
-    background-size: cover;
+    align-items: flex-end;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    margin: 0px 0px 52px 100px;
-    background-size: cover;
-    background-image: url('https://cdn.dribbble.com/users/2567722/screenshots/11952304/media/1792c4c5c2a0a7559a50a1c845453c7f.png?compress=1&resize=1200x900');
+    justify-content: center;
 
     @media (max-width: 1000px) {
-      width: 700px;
-      margin: 0 auto;
-      border-radius: 15px;
-      background: ${(props) => props.theme.accent.white};
-      filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 5%));
-    }
-
-    @media (max-width: 750px) {
-      display: none;
+      display: flex;
+      margin-top: 42px;
+      align-items: center;
     }
   }
 `
@@ -78,44 +67,48 @@ export const HeadingUs = styled.div`
 
 export const FormContact = styled.form`
   width: 700px;
-  margin-top: 42px;
-  margin-bottom: 52px;
+  border-radius: 10px;
+  padding: ${(props) => props.theme.units._60} 48px;
+  background: ${(props) => props.theme.accent.white};
+  filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 15%));
+
+  @media (max-width: 1300px) {
+    width: 90%;
+  }
 
   @media (max-width: 750px) {
     width: 100%;
+    padding: ${(props) => props.theme.units._48} 16px;
   }
 `
 
 export const Card = styled.div`
-  width: 400px;
+  width: 300px;
   display: flex;
-  border-radius: 0px;
   align-items: center;
-  margin: 0 ${(props) => props.theme.units._16};
-  padding: ${(props) => props.theme.units._16};
+  padding: ${(props) => props.theme.units._16} 0px;
 
-  @media (max-width: 550px) {
-    width: 100%;
+  &:not(:last-child) {
+    margin-bottom: ${(props) => props.theme.units._14};
   }
 
   & > div {
     display: flex;
     font-size: 1.5rem;
     margin-right: 10px;
-    color: ${(props) => props.theme.scheme.body};
-
-    @media (max-width: 1000px) {
-      color: ${(props) => props.theme.scheme.domi};
-    }
+    color: ${(props) => props.theme.scheme.domi};
   }
 
   & > p {
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: ${(props) => props.theme.scheme.body};
+    color: ${(props) => props.theme.scheme.text};
+  }
 
-    @media (max-width: 1000px) {
-      color: ${(props) => props.theme.scheme.text};
-    }
+  @media (max-width: 1000px) {
+    justify-content: center;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
   }
 `

@@ -26,6 +26,18 @@ const ContactInput: FC = () => {
               les plus brefs délais.
             </p>
           </span>
+          <div style={{ marginTop: '50px' }}>
+            {IcontactInfoArray.map((el: Icontactinfo, key: number) => {
+              return (
+                <Card key={key}>
+                  <div>{el.icon}</div>
+                  <p>{el.text}</p>
+                </Card>
+              )
+            })}
+          </div>
+        </Col>
+        <Col>
           <FormContact>
             <Input
               type='text'
@@ -37,16 +49,6 @@ const ContactInput: FC = () => {
             <TextArea placeholder='contenu...' icon={<BiMessageSquareDots />} />
             <Button title='envoyer' status={false} />
           </FormContact>
-        </Col>
-        <Col>
-          {IcontactInfoArray.map((el: Icontactinfo, key: number) => {
-            return (
-              <Card key={key}>
-                <div>{el.icon}</div>
-                <p>{el.text}</p>
-              </Card>
-            )
-          })}
         </Col>
       </Container>
     </>
