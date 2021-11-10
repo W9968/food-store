@@ -68,4 +68,8 @@ export const FormButton = styled.button`
     color: ${(props) => props.theme.accent.textshade};
     background: ${(props) => props.theme.accent.disabled};
   }
+
+  &:hover {
+    background: ${(props) => props.theme.accent.hoverSahdeForm};
+  }
 `

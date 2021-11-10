@@ -14,6 +14,7 @@ declare module 'styled-components' {
       select: string
       disabled: string
       textshade: string
+      hoverSahdeForm: string
     }
 
     units: {
@@ -44,6 +45,7 @@ export const lightTheme: DefaultTheme = {
     select: '#191713',
     disabled: '#ebedfd',
     textshade: '#a3a6c8',
+    hoverSahdeForm: '#1F75FE',
   },
   units: {
     _14: '14px',
