@@ -1,4 +1,5 @@
 import __a from 'hooks/useFetch'
+import { Spinner } from 'components/export'
 import { IuserContext } from 'interfaces/Iuser'
 import { useState, createContext, useContext, FC, useEffect } from 'react'
 
@@ -174,7 +175,20 @@ const _UserProvider: FC = ({ children }) => {
         register,
         logout,
       }}>
-      {AuthStateChange && children}
+      {!AuthStateChange ? (
+        <div
+          style={{
+            width: '100%',
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Spinner />
+        </div>
+      ) : (
+        children
+      )}
     </UserContext.Provider>
   )
 }

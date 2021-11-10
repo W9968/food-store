@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled, { keyframes, Keyframes } from 'styled-components'
 import { CgSpinnerAlt } from 'react-icons/cg'
 
-const Loading = () => {
+const Loading: FC = () => {
   return <Spinner />
 }
 
