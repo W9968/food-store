@@ -1,5 +1,5 @@
 import { FC } from 'react'
-const MenuIcon = () => {
+const MenuIcon: FC = () => {
   return <></>
 }
 
