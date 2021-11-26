@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { RiSearchLine } from 'react-icons/ri'
 
@@ -12,7 +13,7 @@ export const SearchField = styled.button`
   align-items: center;
 `
 
-export const Input = styled.div`
+export const Input = styled(motion.div)`
   top: 20%;
   left: 50%;
   z-index: 2;

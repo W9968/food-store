@@ -32,6 +32,7 @@ export const Header = styled.div`
   margin-bottom: ${(props) => props.theme.units._42};
 
   & h1 {
+    margin-bottom: 15px;
     text-transform: capitalize;
     font-size: ${(props) => props.theme.units._42};
   }

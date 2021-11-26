@@ -29,7 +29,7 @@ export const Col = styled.div`
     width: 500px;
     font-size: ${(props) => props.theme.units._16};
     color: ${(props) => props.theme.accent.textshade};
-    line-height: calc(${(props) => props.theme.units._16} * 1.5);
+    line-height: calc(${(props) => props.theme.units._16} * 2);
 
     @media (max-width: 750px) {
       width: 100%;

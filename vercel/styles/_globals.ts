@@ -51,4 +51,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
   }
 
+  h1 { line-height: 1.05em}
+  h4 { line-height: 1.2em }
+  p { line-height: 1.375em }
+  h2,h3 { line-height: 1.25em}
+
 `
