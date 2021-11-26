@@ -5,7 +5,7 @@ import { BiLockOpenAlt } from 'react-icons/bi'
 import { MdAlternateEmail } from 'react-icons/md'
 import { FC, FormEvent, ChangeEvent, useState } from 'react'
 import { Form, Header, Redirect, Row, Cols } from 'styles/form.module'
-import { __auth } from 'store/_authContext'
+import { __auth } from 'context/_authContext'
 
 const LoginForm: FC = () => {
   const [email, setEmail] = useState<string>('')

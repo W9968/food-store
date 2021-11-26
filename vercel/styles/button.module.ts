@@ -9,6 +9,7 @@ export const ButtonLogin = styled.button`
   cursor: pointer;
   margin-left: 24px;
   padding: 10px 14px;
+  border-radius: 5px;
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
@@ -30,6 +31,7 @@ export const CartButton = styled.button`
   background: none;
   position: relative;
   align-items: center;
+  color: ${(props) => props.theme.scheme.text};
 `
 
 export const ShoppingBasket = styled(RiShoppingBag3Line)`
@@ -56,6 +58,7 @@ export const FormButton = styled.button`
   cursor: pointer;
   font-weight: 600;
   padding: 0px 36px;
+  border-radius: 5px;
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
@@ -63,7 +66,7 @@ export const FormButton = styled.button`
   font-size: ${(props) => props.theme.units._16};
   background: ${(props) => props.theme.scheme.domi};
 
-  &:disabled {
+  &:disabled:not([hover]) {
     cursor: not-allowed;
     color: ${(props) => props.theme.accent.textshade};
     background: ${(props) => props.theme.accent.disabled};

@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 // layout for dynamic CSR
 import Layout from 'layout/layout'
-import { AuthContext } from 'store/export'
+import { AuthContext } from 'context/export'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

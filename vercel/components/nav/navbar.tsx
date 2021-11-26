@@ -1,9 +1,12 @@
 import { FC } from 'react'
+import { Header, Row } from 'styles/nav.module'
+import { useMediaQuery } from 'hooks/useMedia'
+import { Cart, MenuIcon } from 'components/export'
+
 import Logo from 'components/logo/logo'
 import Menu from 'components/menu/menu'
-import { Cart } from 'components/export'
 import Login from 'components/buttons/login'
-import { Header, Row } from 'styles/nav.module'
+import Search from 'components/search/Search'
 
 const Navbar: FC = () => {
   return (
@@ -11,10 +14,12 @@ const Navbar: FC = () => {
       <Header>
         <Row>
           <Logo />
-          <Menu />
+          {!useMediaQuery(768) && <Menu />}
         </Row>
         <Row>
           <Cart />
+          <Search />
+          {useMediaQuery(768) && <MenuIcon />}
           <Login />
         </Row>
       </Header>

@@ -6,7 +6,6 @@ import { Cols, Form, Header, Redirect, Row } from 'styles/form.module'
 import { BiLockOpenAlt, BiUser, BiEnvelope } from 'react-icons/bi'
 
 const RegisterForm: FC = () => {
-  console.clear()
   const singUp = (e: FormEvent<HTMLInputElement>) => {
     e.preventDefault()
   }

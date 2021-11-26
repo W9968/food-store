@@ -14,10 +14,6 @@ export const MenuItemsDesktop = styled.div`
   margin-left: 10px;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `
 
 export const Row = styled.div`
@@ -29,12 +25,14 @@ export const Row = styled.div`
 export const Linker = styled.a`
   font-weight: 600;
   padding: 7px 10px;
+  border-radius: 5px;
   text-decoration: none;
   color: ${(props) => props.theme.scheme.text};
   font-size: ${(props) => props.theme.units._14};
   margin: 0 calc(${(props) => props.theme.units._14} * 0.5);
 
   &:hover {
+    color: ${(props) => props.theme.scheme.text};
     background: ${(props) => props.theme.accent.hover};
   }
 `

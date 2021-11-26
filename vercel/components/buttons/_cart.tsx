@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { CartButton, CartItemCount, ShoppingBasket } from 'styles/button.module'
 
