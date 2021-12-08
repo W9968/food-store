@@ -1,5 +1,5 @@
 import __a from 'hooks/useFetch'
-import { Spinner } from 'components/export'
+import { LoaderAnimation } from 'components/export'
 import { IuserContext } from 'interfaces/Iuser'
 import { useState, createContext, useContext, FC, useEffect } from 'react'
 
@@ -184,7 +184,7 @@ const _UserProvider: FC = ({ children }) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Spinner />
+          <LoaderAnimation />
         </div>
       ) : (
         children

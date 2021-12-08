@@ -17,8 +17,8 @@ const Navbar: FC = () => {
           {!useMediaQuery(768) && <Menu />}
         </Row>
         <Row>
+          {!useMediaQuery(768) && <Search />}
           <Cart />
-          <Search />
           {useMediaQuery(768) && <MenuIcon />}
           <Login />
         </Row>

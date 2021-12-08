@@ -27,6 +27,7 @@ export const Linker = styled.a`
   padding: 7px 10px;
   border-radius: 5px;
   text-decoration: none;
+  text-transform: capitalize;
   color: ${(props) => props.theme.scheme.text};
   font-size: ${(props) => props.theme.units._14};
   margin: 0 calc(${(props) => props.theme.units._14} * 0.5);

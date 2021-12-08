@@ -5,17 +5,24 @@ import { ThemeProvider } from 'styled-components'
 
 // layout for dynamic CSR
 import Layout from 'layout/layout'
-import { AuthContext } from 'context/export'
+import { AuthContext, StoreContext } from 'context/export'
+import { AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
-      <AuthContext>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </AuthContext>
+      <AnimateSharedLayout>
+        <AnimatePresence>
+          <StoreContext>
+            <AuthContext>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </AuthContext>
+          </StoreContext>
+        </AnimatePresence>
+      </AnimateSharedLayout>
     </ThemeProvider>
   )
 }
