@@ -8,10 +8,10 @@ const Menu: FC = () => {
     <>
       <MenuItemsDesktop>
         <Link href={'/store'} passHref>
-          <Linker>produits</Linker>
+          <Linker>products</Linker>
         </Link>
         <Link href={'/about'} passHref>
-          <Linker>a propos</Linker>
+          <Linker>About us</Linker>
         </Link>
         <Link href={'/contact'} passHref>
           <Linker>contact</Linker>

@@ -15,33 +15,31 @@ const RegisterForm: FC = () => {
       <Form autoComplete='new-password'>
         <Cols>
           <Header>
-            <h1>{"s'inscrire"}</h1>
-            <p>
-              inscrivez-vous à notre plate-forme pour une meilleure expérience
-            </p>
+            <h1>{'sign up'}</h1>
+            <p>for better experience create an account into our platform</p>
           </Header>
           <Row>
-            <Input placeholder='nom...' type='text' icon={<BiUser />} />
+            <Input placeholder='name...' type='text' icon={<BiUser />} />
             <Input placeholder='email...' type='email' icon={<BiEnvelope />} />
             <Input
-              placeholder='mot de passe...'
+              placeholder='password...'
               type='password'
               icon={<BiLockOpenAlt />}
             />
           </Row>
           <ButtonField
-            title="S'inscrire"
+            title='register'
             status={false}
             onClick={(e: FormEvent<HTMLInputElement>): void => singUp(e)}
           />
         </Cols>
         <Redirect>
           <p>
-            Si vous avez un compte{' '}
+            Already registred?{' '}
             <Link href='/auth/login' passHref>
-              <a>cliquez ici</a>
+              <a>click here</a>
             </Link>{' '}
-            pour se connecter.
+            to login.
           </p>
         </Redirect>
       </Form>

@@ -7,7 +7,7 @@ const Contact: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Entrer en contact'}</title>
+        <title>{'Contact Us'}</title>
       </Head>
       <Wrapper>
         <ContactPage />

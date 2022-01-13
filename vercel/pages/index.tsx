@@ -5,7 +5,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Découvrez les meilleures offres'}</title>
+        <title>{'Discover what we have to offer'}</title>
       </Head>
     </>
   )

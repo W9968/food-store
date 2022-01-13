@@ -9,6 +9,8 @@ use App\Http\Requests\ProductPostRequest;
 
 class ProductController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *

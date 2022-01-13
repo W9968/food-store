@@ -61,3 +61,5 @@ export const Description = styled.div`
   margin-top: ${(props) => props.theme.units._16};
   font-size: ${(props) => props.theme.units._16};
 `
+
+export const Prices = styled.div``

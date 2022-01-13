@@ -18,12 +18,11 @@ const ContactInput: FC = () => {
     <>
       <Container>
         <Col>
-          <span>
+          {/* <span>
             <HeadingUs>Get in Touch</HeadingUs>
             <p>
-              Si vous avez quelque chose à nous dire ou si vous souhaitez être
-              partenaire, envoyez-nous un e-mail et nous vous contacterons dans
-              les plus brefs délais.
+              If you have something to tell us or would like to be a partner,
+              send us an email and we will get back to you as soon as possible.
             </p>
           </span>
           <div style={{ marginTop: '50px' }}>
@@ -35,19 +34,15 @@ const ContactInput: FC = () => {
                 </Card>
               )
             })}
-          </div>
+          </div> */}
         </Col>
         <Col>
           <FormContact>
-            <Input
-              type='text'
-              placeholder='nom complete...'
-              icon={<BiUser />}
-            />
+            <Input type='text' placeholder='full name...' icon={<BiUser />} />
             <Input type='email' placeholder='email...' icon={<BiEnvelope />} />
-            <Input type='text' placeholder='sujet...' icon={<BiEdit />} />
-            <TextArea placeholder='contenu...' icon={<BiMessageSquareDots />} />
-            <Button title='envoyer' status={false} />
+            <Input type='text' placeholder='subject...' icon={<BiEdit />} />
+            <TextArea placeholder='content...' icon={<BiMessageSquareDots />} />
+            <Button title='Send' status={false} />
           </FormContact>
         </Col>
       </Container>

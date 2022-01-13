@@ -2,19 +2,14 @@ import styled from 'styled-components'
 
 export const GroupField = styled.div`
   height: 52px;
+  border: none;
   display: flex;
   border-radius: 5px;
   margin-bottom: 38px;
   align-items: center;
   justify-content: center;
-  background: ${(props) => props.theme.accent.white};
+  background: ${(props) => props.theme.accent.hover};
   filter: drop-shadow(0 4mm 4mm rgba(100, 100, 100, 5%));
-  border: 0.125rem solid ${(props) => props.theme.accent.textshade};
-
-  &:focus,
-  &:focus-within {
-    border: 0.125rem solid ${(props) => props.theme.scheme.text};
-  }
 
   &:last-child {
     margin-bottom: 0;
@@ -39,32 +34,19 @@ export const Field = styled.input`
   font-family: 'Inter', sans-serif;
   font-size: ${(props) => props.theme.units._14};
   padding-right: ${(props) => props.theme.units._14};
-  background: ${(props) => props.theme.accent.white};
-  border-top: 0.125rem solid ${(props) => props.theme.accent.textshade};
-  border-bottom: 0.125rem solid ${(props) => props.theme.accent.textshade};
-
-  &:focus,
-  &:focus-within {
-    border-top: 0.125rem solid ${(props) => props.theme.scheme.text};
-    border-bottom: 0.125rem solid ${(props) => props.theme.scheme.text};
-  }
+  background: ${(props) => props.theme.accent.hover};
 `
 
 export const AreaField = styled.div`
+  border: none;
   height: 250px;
   display: flex;
   border-radius: 5px;
   margin-bottom: 38px;
   align-items: center;
   justify-content: center;
-  background: ${(props) => props.theme.accent.white};
+  background: ${(props) => props.theme.accent.hover};
   filter: drop-shadow(0 4mm 4mm rgba(100, 100, 100, 5%));
-  border: 0.125rem solid ${(props) => props.theme.accent.textshade};
-
-  &:focus,
-  &:focus-within {
-    border: 0.125rem solid ${(props) => props.theme.scheme.text};
-  }
 
   &:last-child {
     margin-bottom: 0;
@@ -92,13 +74,5 @@ export const AreaContent = styled.textarea`
   font-family: 'Inter', sans-serif;
   font-size: ${(props) => props.theme.units._14};
   padding-right: ${(props) => props.theme.units._14};
-  background: ${(props) => props.theme.accent.white};
-  border-top: 0.125rem solid ${(props) => props.theme.accent.textshade};
-  border-bottom: 0.125rem solid ${(props) => props.theme.accent.textshade};
-
-  &:focus,
-  &:focus-within {
-    border-top: 0.125rem solid ${(props) => props.theme.scheme.text};
-    border-bottom: 0.125rem solid ${(props) => props.theme.scheme.text};
-  }
+  background: ${(props) => props.theme.accent.hover};
 `

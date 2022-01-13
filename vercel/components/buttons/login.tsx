@@ -7,7 +7,7 @@ const Login: FC = () => {
     <>
       <Link href={'/auth/login'} passHref>
         <ButtonLogin>
-          <Anchor>se connecter</Anchor>
+          <Anchor>log in</Anchor>
         </ButtonLogin>
       </Link>
     </>

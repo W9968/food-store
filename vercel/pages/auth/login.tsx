@@ -7,7 +7,7 @@ const login: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Accéder à votre compte'}</title>
+        <title>{'Login to Account'}</title>
       </Head>
       <Wrapper>
         <LoginFormPage />

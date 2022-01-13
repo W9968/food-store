@@ -7,7 +7,7 @@ export interface Icontactinfo {
 }
 
 export const IcontactInfoArray: Icontactinfo[] = [
-  { icon: <BiMailSend />, text: 'contact@anamakhir.tn' },
+  { icon: <BiMailSend />, text: 'contact@kouletwaek.tn' },
   { icon: <BiPhone />, text: '(+216) 99-99-99-99' },
   { icon: <BiMap />, text: 'Rue de lac biwa, 1053 TUNIS' },
 ]

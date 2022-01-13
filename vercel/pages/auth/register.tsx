@@ -7,7 +7,7 @@ const Register: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'inscrivez-vous'}</title>
+        <title>{'Register an Account'}</title>
       </Head>
       <Wrapper>
         <RegisterFormPage />

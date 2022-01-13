@@ -38,11 +38,16 @@ const _ProductContext: FC = ({ children }) => {
   const [oneProduct, setOneProduct] = useState<Iproduct>(intial.oneProduct)
 
   const getAllProducts = async () => {
-    return await __a.get('/sanctum/csrf-cookie').then(async () => {
-      await __a.get('/api/product').then((res) => {
-        res.status === 200 && setAllProduct(res.data)
+    return await __a
+      .get('/sanctum/csrf-cookie')
+      .then(async () => {
+        await __a.get('/api/product').then((res) => {
+          res.status === 200 && setAllProduct(res.data)
+        })
       })
-    })
+      .catch(() => {
+        console.log('hello')
+      })
   }
 
   useEffect(() => {

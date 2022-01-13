@@ -35,17 +35,17 @@ declare module 'styled-components' {
 
 export const lightTheme: DefaultTheme = {
   scheme: {
-    body: '#f8f8f8',
+    body: '#fffffe',
     text: '#1f2633',
-    domi: '#4B7B51',
+    domi: '#3da9fc',
   },
   accent: {
-    white: '#ffffff',
+    white: '#f9f9f9',
     hover: '#e4e6ea',
     select: '#191713',
-    disabled: '#dbedcc',
-    textshade: '#9e9e9e',
-    hoverSahdeForm: '#1a4a24',
+    disabled: '#d8eefe',
+    textshade: '#094067',
+    hoverSahdeForm: '#094067',
   },
   units: {
     _14: '14px',

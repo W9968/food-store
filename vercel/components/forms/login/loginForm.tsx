@@ -22,8 +22,8 @@ const LoginForm: FC = () => {
       <Form autoComplete='new-password'>
         <Cols>
           <Header>
-            <h1>se connecter</h1>
-            <p>Entrez vos identifiants pour accéder à votre compte</p>
+            <h1>Sign in</h1>
+            <p>Enter your information to login to you account</p>
           </Header>
           <Row>
             <Input
@@ -35,7 +35,7 @@ const LoginForm: FC = () => {
               }
             />
             <Input
-              placeholder='mot de passe...'
+              placeholder='password...'
               type='password'
               icon={<BiLockOpenAlt />}
               onClick={(e: ChangeEvent<HTMLInputElement>): void =>
@@ -44,18 +44,18 @@ const LoginForm: FC = () => {
             />
           </Row>
           <ButtonField
-            title='connexion'
+            title='login'
             status={loading}
             onClick={(e: FormEvent<HTMLInputElement>): void => auth(e)}
           />
         </Cols>
         <Redirect>
           <p>
-            {"Si vous n'avez pas de compte "}
+            {"If you don't have an account "}
             <Link href='/auth/register' passHref>
-              <a>cliquez ici</a>
+              <a>click here </a>
             </Link>{' '}
-            pour en créer un.
+            to create a new one.
           </p>
         </Redirect>
       </Form>

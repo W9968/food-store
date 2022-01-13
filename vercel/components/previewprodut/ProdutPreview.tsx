@@ -8,6 +8,7 @@ import {
   BoxImage,
   Container,
   Description,
+  Prices,
   Summary,
   Title,
 } from 'styles/Preview.module'
