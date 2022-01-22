@@ -89,7 +89,7 @@ const Login: FC = () => {
               __fetch.get('/sanctum/csrf-cookie').then(() => {
                 __fetch
                   .post('/api/catalog', {
-                    category: 'drinkers',
+                    category: 'boobies',
                   })
                   .then((res) => console.log(res))
               })
