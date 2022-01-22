@@ -87,7 +87,7 @@ const Login: FC = () => {
               //   setDisable(false)
               // }
               __fetch.post('/api/catalog', {
-                category: 'milk',
+                category: 'boisson',
               })
             }}
           />
