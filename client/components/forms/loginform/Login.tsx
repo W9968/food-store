@@ -86,8 +86,12 @@ const Login: FC = () => {
               //   alert('nice')
               //   setDisable(false)
               // }
-              __fetch.post('/api/catalog', {
-                category: 'boisson',
+              __fetch.get('/sanctum/csrf-cookie').then(() => {
+                __fetch
+                  .post('/api/catalog', {
+                    category: 'drinkers',
+                  })
+                  .then((res) => console.log(res))
               })
             }}
           />
