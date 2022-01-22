@@ -86,13 +86,13 @@ const Login: FC = () => {
               //   alert('nice')
               //   setDisable(false)
               // }
-              // __fetch.get('/sanctum/csrf-cookie').then(() => {
-              __fetch
-                .post('/api/catalog', {
-                  category: 'boobies',
-                })
-                .then((res) => console.log(res))
-              // })
+              __fetch.get('/sanctum/csrf-cookie').then(() => {
+                __fetch
+                  .post('/api/catalog', {
+                    category: 'boobies',
+                  })
+                  .then((res) => console.log(res))
+              })
             }}
           />
 
