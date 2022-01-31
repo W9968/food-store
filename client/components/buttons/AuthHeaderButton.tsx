@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { LoginAuthButton } from 'styles/button.module'
 import { __auth } from 'context/_authContext'
+import { LoginAuthButton } from 'styles/button.module'
 
 const AuthHeaderButton: FC = () => {
   const { isSubscribed, logout } = __auth()

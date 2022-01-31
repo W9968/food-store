@@ -1,19 +1,21 @@
+import { BiMailSend, BiLockOpenAlt } from 'react-icons/bi'
+import { mail_regex, pass_regex } from 'validation/formRegex'
 import { ChangeEvent, FC, SyntheticEvent, useState } from 'react'
+
+import Logo from 'components/logo/Logo'
+import TextInput from 'components/input/TextInput'
+import AuthButton from 'components/buttons/AuthButton'
+import CheckBox from 'components/input/CheckBox'
+
+import Link from 'next/link'
+import { __auth } from 'context/_authContext'
+
 import {
   AuthAction,
   AuthForm,
   AuthHeader,
   AuthWrapper,
 } from 'styles/auth.module'
-import { BiMailSend, BiLockOpenAlt } from 'react-icons/bi'
-import { mail_regex, pass_regex } from 'validation/formRegex'
-
-import TextInput from 'components/input/TextInput'
-import AuthButton from 'components/buttons/AuthButton'
-import Link from 'next/link'
-import CheckBox from 'components/input/CheckBox'
-import Logo from 'components/logo/Logo'
-import { __auth } from 'context/_authContext'
 
 const Login: FC = () => {
   const [form, setForm] = useState<{
@@ -25,11 +27,11 @@ const Login: FC = () => {
     password: '',
     remember: false,
   })
+
+  const { authenticate, loading, isSubscribed } = __auth()
   const [statusEmail, setStatusEMail] = useState<'n' | 'e' | 's'>('n')
   const [statusPassword, setStatusPassword] = useState<'n' | 'e' | 's'>('n')
-  const [disable, setDisable] = useState<boolean>(false)
-
-  const { authenticate } = __auth()
+  const [disable, setDisable] = useState<boolean>(loading)
 
   return (
     <AuthWrapper>
@@ -79,7 +81,7 @@ const Login: FC = () => {
         />
         <AuthAction>
           <AuthButton
-            status={disable}
+            status={loading}
             title={'Sign in'}
             onClick={(e: SyntheticEvent): void => {
               e.preventDefault()

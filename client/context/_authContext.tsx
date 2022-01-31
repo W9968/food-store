@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { __fetch } from 'hooks/useAxios'
 import { intialUserStore, IuserContext } from 'interfaces/Iauth'
 import { useState, createContext, useContext, FC, useEffect } from 'react'
@@ -9,7 +10,7 @@ const _UserProvider: FC = ({ children }) => {
   // localstorage key name
   // a key name we going to use to refrence the value of an authed user
   const keyLoad: string = 'isSubscribed'
-
+  const router = useRouter()
   const [loading, setLoading] = useState<boolean>(intialUserStore.loading)
   const [isSubscribed, setIsSubscribed] = useState<boolean>(
     (typeof window !== 'undefined' &&
@@ -47,6 +48,7 @@ const _UserProvider: FC = ({ children }) => {
                   setIsSubscribed(true)
                   getCurrentUser()
                   localStorage.setItem(keyLoad, `${true}`)
+                  router.push('/')
                   setLoading(false)
                 } else {
                   setIsSubscribed(false)
@@ -87,6 +89,7 @@ const _UserProvider: FC = ({ children }) => {
                   setIsSubscribed(true)
                   getCurrentUser()
                   localStorage.setItem(keyLoad, `${true}`)
+                  router.push('/')
                   setLoading(false)
                 } else {
                   setIsSubscribed(false)

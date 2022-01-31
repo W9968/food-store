@@ -13,6 +13,8 @@ import AuthButton from 'components/buttons/AuthButton'
 import Link from 'next/link'
 import Logo from 'components/logo/Logo'
 
+import { __auth } from 'context/_authContext'
+
 const Register: FC = () => {
   const [form, setForm] = useState<{
     name: string
@@ -23,7 +25,7 @@ const Register: FC = () => {
     mail: '',
     password: '',
   })
-
+  const { loading, register } = __auth()
   const [statusName, setStatusName] = useState<'n' | 'e' | 's'>('n')
   const [statusEmail, setStatusEMail] = useState<'n' | 'e' | 's'>('n')
   const [statusPassword, setStatusPassword] = useState<'n' | 'e' | 's'>('n')
@@ -87,7 +89,7 @@ const Register: FC = () => {
         />
         <AuthAction>
           <AuthButton
-            status={disable}
+            status={loading}
             title={'Sign up'}
             onClick={(e: SyntheticEvent): void => {
               e.preventDefault()
@@ -95,6 +97,8 @@ const Register: FC = () => {
                 setDisable(true)
                 alert('nice')
                 setDisable(false)
+              } else {
+                register(form.name, form.mail, form.password)
               }
             }}
           />
