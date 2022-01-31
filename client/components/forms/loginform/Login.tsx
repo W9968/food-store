@@ -13,7 +13,7 @@ import AuthButton from 'components/buttons/AuthButton'
 import Link from 'next/link'
 import CheckBox from 'components/input/CheckBox'
 import Logo from 'components/logo/Logo'
-import { __fetch } from 'hooks/useAxios'
+import { __auth } from 'context/_authContext'
 
 const Login: FC = () => {
   const [form, setForm] = useState<{
@@ -28,6 +28,8 @@ const Login: FC = () => {
   const [statusEmail, setStatusEMail] = useState<'n' | 'e' | 's'>('n')
   const [statusPassword, setStatusPassword] = useState<'n' | 'e' | 's'>('n')
   const [disable, setDisable] = useState<boolean>(false)
+
+  const { authenticate } = __auth()
 
   return (
     <AuthWrapper>
@@ -81,18 +83,11 @@ const Login: FC = () => {
             title={'Sign in'}
             onClick={(e: SyntheticEvent): void => {
               e.preventDefault()
-              // if (statusEmail === 'e' || statusPassword === 'e') {
-              //   setDisable(true)
-              //   alert('nice')
-              //   setDisable(false)
-              // }
-              __fetch.get('/sanctum/csrf-cookie').then(() => {
-                __fetch
-                  .post('/api/catalog', {
-                    category: 'boobies',
-                  })
-                  .then((res) => console.log(res))
-              })
+              if (statusEmail === 'e' || statusPassword === 'e') {
+                setDisable(true)
+              } else {
+                authenticate(form.mail, form.password, form.remember)
+              }
             }}
           />
 

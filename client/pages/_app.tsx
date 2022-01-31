@@ -5,6 +5,9 @@ import { Normalized } from 'styles/@globals'
 import { ThemeProvider } from 'styled-components'
 import { AnimateSharedLayout } from 'framer-motion'
 
+// context apis
+import { AuthContext } from 'context/exports'
+
 import Layout from 'layout/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,9 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={palette}>
       <Normalized />
       <AnimateSharedLayout>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <AuthContext>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </AuthContext>
       </AnimateSharedLayout>
     </ThemeProvider>
   )
