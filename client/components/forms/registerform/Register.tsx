@@ -13,7 +13,7 @@ import AuthButton from 'components/buttons/AuthButton'
 import Link from 'next/link'
 import Logo from 'components/logo/Logo'
 
-import { __auth } from 'context/_authContext'
+import { __auth } from 'context/exports'
 
 const Register: FC = () => {
   const [form, setForm] = useState<{

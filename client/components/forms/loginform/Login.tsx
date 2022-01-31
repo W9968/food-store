@@ -8,7 +8,7 @@ import AuthButton from 'components/buttons/AuthButton'
 import CheckBox from 'components/input/CheckBox'
 
 import Link from 'next/link'
-import { __auth } from 'context/_authContext'
+import { __auth } from 'context/exports'
 
 import {
   AuthAction,
