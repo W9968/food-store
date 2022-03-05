@@ -95,13 +95,13 @@ export const DropDoawnButton = styled.button`
 
 export const Dropped = styled(motion.div)`
   right: 0;
+  top: 125%;
   width: 150px;
   display: flex;
   padding: 0 10px;
   position: absolute;
   border-radius: 5px;
   flex-direction: column;
-  background: ${({ theme }) => theme.accent.accent_color_1};
   filter: drop-shadow(0 4mm 4mm rgba(80, 80, 80, 15%));
   background: ${({ theme }) => theme.accent.accent_color_1};
 

@@ -14,11 +14,11 @@ const AccountDropDown: FC = () => {
   const { isSubscribed, currentUser, logout } = __auth()
   const [isShown, setShown] = useState<boolean>(false)
 
-  console.log(currentUser)
-
   return (
     <DropDown>
-      <DropDoawnButton onClick={(): void => setShown(!isShown)}>
+      <DropDoawnButton
+        onClick={(): void => setShown(!isShown)}
+        onBlur={(): void => setShown(false)}>
         <BiUser />
       </DropDoawnButton>
       <AnimatePresence>
