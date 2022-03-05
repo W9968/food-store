@@ -22,7 +22,7 @@ export const Normalized = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     color: ${(props) => props.theme.accent.accent_color_4};
-    background-color: ${(props) => props.theme.accent.accent_color_1};
+    background: ${(props) => props.theme.accent.accent_color_1};
   }
   
   ::selection {
