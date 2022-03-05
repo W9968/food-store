@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import type { NextPage } from 'next'
 import { RegisterHeader } from 'components/export'
+import useSubscription from 'hooks/useSubscription'
 
-const Login: NextPage = () => {
+const Register: NextPage = () => {
   return (
     <>
       <Head>
@@ -12,5 +13,5 @@ const Login: NextPage = () => {
     </>
   )
 }
-
-export default Login
+// eslint-disable-next-line
+export default useSubscription(Register)

@@ -2,16 +2,23 @@ import { useRouter } from 'next/router'
 import { __fetch } from 'hooks/useAxios'
 import { intialUserStore, IuserContext } from 'interfaces/Iauth'
 import { useState, createContext, useContext, FC, useEffect } from 'react'
+import { Loader } from 'components/export'
 
 const UserContext = createContext<IuserContext>(intialUserStore)
 export const __auth = () => useContext(UserContext)
 
 const _UserProvider: FC = ({ children }) => {
-  // localstorage key name
-  // a key name we going to use to refrence the value of an authed user
+  /**
+   * localstorage key name
+   * a key name we going to use to refrence the value of an authed user
+   */
   const keyLoad: string = 'isSubscribed'
   const router = useRouter()
   const [loading, setLoading] = useState<boolean>(intialUserStore.loading)
+  /**
+   * use of typeof windows != 'undefined'
+   * cuz server side rendring does not support local storage
+   */
   const [isSubscribed, setIsSubscribed] = useState<boolean>(
     (typeof window !== 'undefined' &&
       localStorage.getItem(keyLoad) === 'true') ||
@@ -24,7 +31,13 @@ const _UserProvider: FC = ({ children }) => {
     intialUserStore.serverResponse
   )
 
-  // register endpoint
+  /**
+   * register server endpoint
+   * @param fullName
+   * @param userMail
+   * @param userPassword
+   * @returns {Promise}
+   */
   const register = async (
     fullName: string,
     userMail: string,
@@ -108,7 +121,10 @@ const _UserProvider: FC = ({ children }) => {
       )
   }
 
-  // logout endpoint
+  /**
+   * logout server endpoint
+   * @returns {Promise}
+   */
   const logout = async () => {
     return await __fetch.get('/sanctum/csrf-cookie').then((res) => {
       res.status === 204
@@ -130,8 +146,11 @@ const _UserProvider: FC = ({ children }) => {
     })
   }
 
+  /**
+   * endpoint for getting current logged in user
+   * @return {Promise}
+   */
   const [AuthStateChange, setAuthStateChange] = useState<boolean>(false)
-  // current user endpoint
   const getCurrentUser = async () => {
     await __fetch
       .get('/api/user')
@@ -158,6 +177,11 @@ const _UserProvider: FC = ({ children }) => {
         // console.clear()
       })
   }
+
+  /**
+   * this function will render once our application is mounted
+   * it will call for get current user and store it into coockies
+   */
   useEffect(() => {
     getCurrentUser()
   }, [])
@@ -173,7 +197,21 @@ const _UserProvider: FC = ({ children }) => {
         register,
         logout,
       }}>
-      {AuthStateChange && children}
+      {AuthStateChange ? (
+        children
+      ) : (
+        <span
+          style={{
+            width: '100%',
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            background: '#fffffe',
+            justifyContent: 'center',
+          }}>
+          <Loader />
+        </span>
+      )}
     </UserContext.Provider>
   )
 }
