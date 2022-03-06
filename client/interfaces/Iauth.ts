@@ -12,7 +12,8 @@ export interface IuserContext {
   currentUser: Iuser
   isSubscribed: boolean
   validationMessage: {
-    type?: 's' | 'e' | 'w'
+    type: 's' | 'e' | 'w' | ''
+    message: string
   }
   serverResponse: string
   loading: boolean
@@ -28,7 +29,7 @@ export interface IuserContext {
 export const intialUserStore: IuserContext = {
   currentUser: {},
   isSubscribed: false,
-  validationMessage: {},
+  validationMessage: { type: '', message: '' },
   serverResponse: '',
   loading: false,
   authenticate: () => {},

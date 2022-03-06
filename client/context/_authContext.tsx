@@ -30,7 +30,7 @@ const _UserProvider: FC = ({ children }) => {
   const [serverResponse, setServerResponse] = useState<string>(
     intialUserStore.serverResponse
   )
-  const [validationMessage, setValidationMessage] = useState<{}>(
+  const [validationMessage, setValidationMessage] = useState(
     intialUserStore.validationMessage
   )
 

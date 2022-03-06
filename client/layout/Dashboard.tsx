@@ -1,5 +1,5 @@
 import { FC, ReactChild } from 'react'
-import { DashboardLayout } from 'styles/admin.element'
+import { DashboardLayout } from 'styles/admin.module'
 
 type Iprops = {
   children: ReactChild

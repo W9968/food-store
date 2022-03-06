@@ -16,6 +16,7 @@ import {
   AuthHeader,
   AuthWrapper,
 } from 'styles/auth.module'
+import Modal from 'components/modal/Modal'
 
 const Login: FC = () => {
   const [form, setForm] = useState<{
@@ -28,13 +29,14 @@ const Login: FC = () => {
     remember: false,
   })
 
-  const { authenticate, loading, validationMessage } = __auth()
+  const { authenticate, loading } = __auth()
   const [statusEmail, setStatusEMail] = useState<'n' | 'e' | 's'>('n')
   const [statusPassword, setStatusPassword] = useState<'n' | 'e' | 's'>('n')
   const [disable, setDisable] = useState<boolean>(loading)
 
   return (
     <AuthWrapper>
+      <Modal />
       <AuthForm layoutId='form' transition={{ type: 'tween' }}>
         <Logo /> <br />
         <AuthHeader>
@@ -105,7 +107,6 @@ const Login: FC = () => {
           </p>
         </AuthAction>
       </AuthForm>
-      {JSON.stringify(validationMessage)}
     </AuthWrapper>
   )
 }
