@@ -25,12 +25,12 @@ class ProductPostRequest extends FormRequest
     {
         return [
             'productName' => 'required',
-            'productSummary'=> 'required',
-            'productOldPrice'=> 'required',
-            'productNewPrice'=> 'required',
-            'productDesription'=> 'required',
-            'productInventory'=> 'required',
-            'procutExpirationDate'=> 'required',
+            'productSummary' => 'required',
+            'productOldPrice' => 'required',
+            'productNewPrice' => 'required',
+            'productDesription' => 'required',
+            'productInventory' => 'required',
+            'procutExpirationDate' => 'required',
             'productFilePathImage' => 'required',
             'brand_id' => 'required'
         ];

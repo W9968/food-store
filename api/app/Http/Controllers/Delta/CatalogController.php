@@ -60,7 +60,7 @@ class CatalogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return Catalog::find($id)->update($request -> all()) ;
+        return Catalog::find($id)->update($request->all());
     }
 
     /**
