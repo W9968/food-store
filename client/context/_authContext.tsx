@@ -30,6 +30,9 @@ const _UserProvider: FC = ({ children }) => {
   const [serverResponse, setServerResponse] = useState<string>(
     intialUserStore.serverResponse
   )
+  const [validationMessage, setValidationMessage] = useState<{}>(
+    intialUserStore.validationMessage
+  )
 
   /**
    * register server endpoint
@@ -109,6 +112,13 @@ const _UserProvider: FC = ({ children }) => {
                   localStorage.setItem(keyLoad, `${false}`)
                   setLoading(false)
                 }
+              })
+              .catch(() => {
+                setValidationMessage({
+                  type: 'e',
+                  message: 'verify your information',
+                })
+                setLoading(false)
               })
           : setServerResponse(
               'It seems that ours servers are down, sorry for the inconvenience'
@@ -191,6 +201,7 @@ const _UserProvider: FC = ({ children }) => {
       value={{
         currentUser,
         isSubscribed,
+        validationMessage,
         serverResponse,
         loading,
         authenticate,

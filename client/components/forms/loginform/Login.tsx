@@ -28,7 +28,7 @@ const Login: FC = () => {
     remember: false,
   })
 
-  const { authenticate, loading, isSubscribed } = __auth()
+  const { authenticate, loading, validationMessage } = __auth()
   const [statusEmail, setStatusEMail] = useState<'n' | 'e' | 's'>('n')
   const [statusPassword, setStatusPassword] = useState<'n' | 'e' | 's'>('n')
   const [disable, setDisable] = useState<boolean>(loading)
@@ -92,7 +92,6 @@ const Login: FC = () => {
               }
             }}
           />
-
           <p>
             <Link href={'/auth/reset'} passHref>
               <a>Reset</a>
@@ -106,6 +105,7 @@ const Login: FC = () => {
           </p>
         </AuthAction>
       </AuthForm>
+      {JSON.stringify(validationMessage)}
     </AuthWrapper>
   )
 }
